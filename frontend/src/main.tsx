@@ -130,6 +130,9 @@ function App() {
     setDraft(selected?.approved_reply || selected?.analysis.reply || "");
   }, [selected]);
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [page, selected?.id]);
+  useEffect(() => {
     function esc(e: KeyboardEvent) {
       if (e.key === "Escape" && !busy && !recording) setModal(false);
     }
@@ -419,7 +422,7 @@ function App() {
                     <br className="desktop-br" /> and policy evidence before
                     approving a response.
                   </p>
-                  <div className="d-flex gap-2">
+                  <div className="d-flex flex-wrap gap-2">
                     <button className="btn btn-dark" onClick={() => create()}>
                       <Icon name="chat-left-text" /> Add a message
                     </button>

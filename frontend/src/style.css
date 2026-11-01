@@ -370,6 +370,9 @@ main {
   color: #a37654;
   font-size: 9px;
 }
+.welcome-strip > div {
+  min-width: 0;
+}
 .welcome-strip h2 {
   font-size: 22px;
   margin: 9px 0;

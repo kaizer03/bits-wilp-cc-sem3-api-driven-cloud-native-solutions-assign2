@@ -1,0 +1,30 @@
+{
+  "recorded_at": "2026-11-01T10:24:01.514140+00:00",
+  "scope": "Local Chrome browser checks; not a device lab or broad browser compatibility study.",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "page_widths": {
+    "overview": 390,
+    "cases": 390,
+    "case_detail": 390,
+    "policy_library": 390,
+    "quality_models": 390,
+    "activity": 390
+  },
+  "checks": {
+    "navigation": "passed",
+    "case_detail": "passed",
+    "intake_dialog_fit": "passed",
+    "overview_action_buttons": "passed after wrapping fix",
+    "page_navigation_scroll_reset": "passed",
+    "horizontal_table_scroll": "Contained within table panels; page width remains 390px.",
+    "audio_file_upload": "pending"
+  },
+  "limitations": [
+    "Audio upload remains pending in the browser. The transcription API was verified separately.",
+    "Microphone capture and natural human audio have not been evaluated.",
+    "Single local Chrome browser and phone-size viewport."
+  ]
+}
