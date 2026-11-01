@@ -44,7 +44,7 @@ def test_end_to_end_review_and_reopen(client,monkeypatch):
     monkeypatch.setattr(main.service,'intent',lambda *a,**kw:{'label':'cancel_order','valid':True})
     monkeypatch.setattr(main.service,'sentiment',lambda *a:{'label':'neutral','score':.7})
     monkeypatch.setattr(main,'retrieve',lambda *a:[{'id':'POL-02','content':'Cancellation before dispatch.'}])
-    monkeypatch.setattr(main.service,'generate',lambda *a,**kw:({'summary':'The customer requests cancellation.','reply':'Please check the dispatch state before requesting cancellation.'},{'model':'test'}))
+    monkeypatch.setattr(main.service,'generate',lambda instruction,*a,**kw:('The customer requests cancellation.' if instruction.startswith('Summarise') else 'Please check the dispatch state before requesting cancellation.',{'model':'test'}))
     r=client.post(f'/api/tickets/{i}/analyse');assert r.status_code==200
     assert r.json()['status']=='review'
     edited='The request can be reviewed after checking the dispatch state.'
@@ -129,14 +129,14 @@ def test_promised_cancellation_and_unsupported_fee_are_flagged():
 
 def test_unsupported_numeric_answer_is_replaced_with_policy(client,monkeypatch):
     monkeypatch.setattr(main,'retrieve',lambda *a:[{'id':'POL-09','content':'Raise a complaint through Help.'}])
-    monkeypatch.setattr(main.service,'generate',lambda *a,**kw:({'answer':'Raise your complaint within 7 days.'},{}))
+    monkeypatch.setattr(main.service,'generate',lambda *a,**kw:('Raise your complaint within 7 days.',{}))
     r=client.post('/api/knowledge/ask',json={'question':'How can I raise a complaint?'})
     assert r.status_code==200
     assert r.json()['answer']=='Raise a complaint through Help.'
     assert r.json()['answer_mode']=='verbatim_policy'
 
 
-def test_malformed_generation_preserves_access_to_policy(client,monkeypatch):
+def test_failed_generation_preserves_access_to_policy(client,monkeypatch):
     monkeypatch.setattr(main,'retrieve',lambda *a:[{'id':'POL-13','content':'Choose a product and complete checkout.'}])
     def invalid(*a,**kw):raise RuntimeError('Output was not valid JSON')
     monkeypatch.setattr(main.service,'generate',invalid)

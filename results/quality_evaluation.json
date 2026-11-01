@@ -1,8 +1,8 @@
 {
-  "created_at": "2026-11-01T04:34:50.867631+00:00",
+  "created_at": "2026-11-01T05:00:34.533036+00:00",
   "scope": "Development diagnostics used for model improvement: 27 intent, 12 sentiment, 23 policy and 4 synthetic speech examples. Reference-term coverage is an automated proxy, not a human factuality score.",
   "fixture_sha256": "fbcee30575e181cd0f1d671715f7ab85968de62e4fd73e6936ffffa04d5954df",
-  "prompt_version": "support-1.1",
+  "prompt_version": "support-1.2",
   "policy_version": "2026.11.01",
   "metrics": {
     "authored_intent_accuracy": 0.9259259259259259,
@@ -10,8 +10,8 @@
     "sentiment_accuracy": 1.0,
     "retrieval_recall_at_2": 1.0,
     "abstention_accuracy": 1.0,
-    "policy_reference_term_coverage": 1.0,
-    "policy_end_to_end_p95_seconds": 2.334051720728166,
+    "policy_reference_term_coverage": 0.9411764705882353,
+    "policy_end_to_end_p95_seconds": 1.0893198374425992,
     "synthetic_speech_wer": 0.0
   },
   "rows": {
@@ -285,12 +285,12 @@
           "abstained": false,
           "flags": [],
           "answer_mode": "generated",
-          "request_id": "fbf0108a0331"
+          "request_id": "9aca5b001ef2"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": true,
-        "seconds": 6.337910208152607
+        "seconds": 8.034763833973557
       },
       {
         "question": "Where do I find my parcel tracking link?",
@@ -302,7 +302,7 @@
           "POL-01"
         ],
         "answer": {
-          "answer": "A tracking link appears in My Orders once the parcel is dispatched.",
+          "answer": "To find your parcel tracking link, go to My Orders and look for the \"Track Order\" option.",
           "evidence": [
             {
               "id": "POL-01",
@@ -321,12 +321,12 @@
           "abstained": false,
           "flags": [],
           "answer_mode": "generated",
-          "request_id": "33bd10fd037c"
+          "request_id": "637840052550"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": true,
-        "seconds": 1.8983499589376152
+        "seconds": 0.7023875410668552
       },
       {
         "question": "Can I cancel an order before dispatch?",
@@ -356,12 +356,12 @@
           "abstained": false,
           "flags": [],
           "answer_mode": "generated",
-          "request_id": "8b8f152e8ee6"
+          "request_id": "c7d231b80d2f"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": true,
-        "seconds": 1.4584994160104543
+        "seconds": 0.7869919589720666
       },
       {
         "question": "Can a dispatched order still be cancelled?",
@@ -374,7 +374,7 @@
           "POL-11"
         ],
         "answer": {
-          "answer": "Dispatched orders cannot be cancelled directly. Customers should request a return after delivery if they need to cancel their order.",
+          "answer": "A dispatched order cannot be cancelled directly. The customer should request a return after delivery if they need to cancel. Human review may be needed for more detailed assistance.",
           "evidence": [
             {
               "id": "POL-02",
@@ -391,12 +391,12 @@
           "abstained": false,
           "flags": [],
           "answer_mode": "generated",
-          "request_id": "5fb5d0aa754b"
+          "request_id": "48dbb86e09fa"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": true,
-        "seconds": 2.2680960830766708
+        "seconds": 0.708192375022918
       },
       {
         "question": "Can I change the shipping address before dispatch?",
@@ -409,7 +409,7 @@
           "POL-02"
         ],
         "answer": {
-          "answer": "Yes, you can change the shipping address before dispatch. Save your preferred shipping address in Account Settings.",
+          "answer": "Yes, you can change the shipping address before dispatch if there's still stock available and the new address is serviceable. Save your preferred shipping address in Account Settings for future reference. Always check the order record before confirming any changes.",
           "evidence": [
             {
               "id": "POL-03",
@@ -428,12 +428,12 @@
           "abstained": false,
           "flags": [],
           "answer_mode": "generated",
-          "request_id": "327517ffba4f"
+          "request_id": "387223585725"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": true,
-        "seconds": 2.0294221248477697
+        "seconds": 0.9939532498829067
       },
       {
         "question": "What is the time limit for requesting a return?",
@@ -465,12 +465,12 @@
           "abstained": false,
           "flags": [],
           "answer_mode": "generated",
-          "request_id": "f3b87ad1558d"
+          "request_id": "2bc6d64969e6"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": true,
-        "seconds": 1.8514733328483999
+        "seconds": 0.4312447919510305
       },
       {
         "question": "How long does an eligible refund take after inspection?",
@@ -483,7 +483,7 @@
           "POL-04"
         ],
         "answer": {
-          "answer": "An eligible refund takes approximately 5 to 7 business days from when the returned item is received and inspected.",
+          "answer": "An eligible refund takes approximately 5 to 7 business days from when the returned item is received and inspected. Customers can check their existing refund in My Orders.",
           "evidence": [
             {
               "id": "POL-04",
@@ -502,12 +502,12 @@
           "abstained": false,
           "flags": [],
           "answer_mode": "generated",
-          "request_id": "47bf6f9596d4"
+          "request_id": "f305b49bf8e4"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": true,
-        "seconds": 2.2388754580169916
+        "seconds": 0.6926096249371767
       },
       {
         "question": "Do you accept UPI and debit cards?",
@@ -519,7 +519,7 @@
           "POL-05"
         ],
         "answer": {
-          "answer": "Yes, we accept UPI and debit cards.",
+          "answer": "Yes, we accept UPI and debit cards. For more details on payments, visit My Orders.",
           "evidence": [
             {
               "id": "POL-05",
@@ -539,12 +539,12 @@
           "abstained": false,
           "flags": [],
           "answer_mode": "generated",
-          "request_id": "b1b5c3c3897b"
+          "request_id": "f4f6ef17f53c"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": true,
-        "seconds": 2.341380124911666
+        "seconds": 0.662797249853611
       },
       {
         "question": "Where can I download the invoice for my confirmed order?",
@@ -557,7 +557,7 @@
           "POL-13"
         ],
         "answer": {
-          "answer": "Invoices for confirmed orders can be downloaded from My Orders.",
+          "answer": "From My Orders, you can download the invoice for your confirmed order.",
           "evidence": [
             {
               "id": "POL-05",
@@ -577,12 +577,12 @@
           "abstained": false,
           "flags": [],
           "answer_mode": "generated",
-          "request_id": "ae15f9446af6"
+          "request_id": "319657a09260"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": true,
-        "seconds": 1.9398435831535608
+        "seconds": 0.38967154221609235
       },
       {
         "question": "What should I check when my account registration email fails?",
@@ -595,7 +595,7 @@
           "POL-07"
         ],
         "answer": {
-          "answer": "Check if the email you used for registration is already registered and verify the email by checking spam folders.",
+          "answer": "Check if your email is already registered and verify the email address by checking spam folders.",
           "evidence": [
             {
               "id": "POL-06",
@@ -614,12 +614,12 @@
           "abstained": false,
           "flags": [],
           "answer_mode": "generated",
-          "request_id": "ecb4ffb94050"
+          "request_id": "fca3bf78ab73"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": true,
-        "seconds": 0.6153139160014689
+        "seconds": 0.42339629214257
       },
       {
         "question": "How can I reset a forgotten password?",
@@ -631,7 +631,7 @@
           "POL-07"
         ],
         "answer": {
-          "answer": "To reset a forgotten password, go to the sign-in page, click 'Forgot Password', and follow the reset link sent to your registered email. Ensure you're signed out of other accounts before proceeding.",
+          "answer": "Resetting a forgotten password involves going to the sign-in page, clicking \"Forgot Password,\" following the reset link sent to your registered email, signing out of any existing account, and then switching to the new one. For more detailed steps, refer to the Account Access and Closure policy.",
           "evidence": [
             {
               "id": "POL-07",
@@ -650,12 +650,12 @@
           "abstained": false,
           "flags": [],
           "answer_mode": "generated",
-          "request_id": "2833207a84d4"
+          "request_id": "6cb0173e9d16"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": true,
-        "seconds": 0.9397483749780804
+        "seconds": 1.0999161249492317
       },
       {
         "question": "Where can I request deletion of my account?",
@@ -668,7 +668,7 @@
           "POL-06"
         ],
         "answer": {
-          "answer": "Go to Account Settings and follow the steps to delete your account.",
+          "answer": "Human review is needed.",
           "evidence": [
             {
               "id": "POL-07",
@@ -687,12 +687,12 @@
           "abstained": false,
           "flags": [],
           "answer_mode": "generated",
-          "request_id": "acc35927b684"
+          "request_id": "cd46030dd750"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
-        "reference_terms_present": true,
-        "seconds": 0.41811562492512167
+        "reference_terms_present": false,
+        "seconds": 0.23646366596221924
       },
       {
         "question": "What are the customer service opening hours?",
@@ -705,7 +705,7 @@
           "POL-08"
         ],
         "answer": {
-          "answer": "Customer service is available Monday to Saturday from 09:00 to 18:00 IST.",
+          "answer": "The customer service hours are Monday to Saturday from 09:00 to 18:00 IST. For more details or to request a human review, visit the Help page.",
           "evidence": [
             {
               "id": "POL-08",
@@ -723,12 +723,12 @@
           "abstained": false,
           "flags": [],
           "answer_mode": "generated",
-          "request_id": "aef5507f6ac3"
+          "request_id": "d9ddaf3d8437"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": true,
-        "seconds": 0.6432646249886602
+        "seconds": 0.8063839999958873
       },
       {
         "question": "How can I raise a complaint about my order?",
@@ -741,7 +741,7 @@
           "POL-13"
         ],
         "answer": {
-          "answer": "To raise a complaint about your order, visit the Help section of our website. Provide the order reference and a detailed description of the issue you're facing.",
+          "answer": "To raise a complaint about your order, visit Help and provide the order reference along with a detailed description of the issue.",
           "evidence": [
             {
               "id": "POL-09",
@@ -759,12 +759,12 @@
           "abstained": false,
           "flags": [],
           "answer_mode": "generated",
-          "request_id": "461e4a4369fa"
+          "request_id": "35b139f615b4"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": true,
-        "seconds": 0.7803434999659657
+        "seconds": 0.5435328329913318
       },
       {
         "question": "How can I stop the newsletter emails?",
@@ -776,7 +776,7 @@
           "POL-10"
         ],
         "answer": {
-          "answer": "To stop receiving newsletter emails, go to Account Settings or use the unsubscribe link found in the email.",
+          "answer": "To stop newsletter emails, go to Account Settings or use the unsubscribe link in the email.",
           "evidence": [
             {
               "id": "POL-10",
@@ -793,12 +793,12 @@
           "abstained": false,
           "flags": [],
           "answer_mode": "generated",
-          "request_id": "0ff88506a429"
+          "request_id": "46e8d83bc551"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": true,
-        "seconds": 0.5817604591138661
+        "seconds": 0.43789379112422466
       },
       {
         "question": "Is there a cancellation fee before dispatch?",
@@ -811,7 +811,7 @@
           "POL-02"
         ],
         "answer": {
-          "answer": "No, there is no store cancellation fee for an eligible order cancelled before dispatch.",
+          "answer": "No, there is no cancellation fee before dispatch according to the policy. Delivery charges and return collection charges are displayed at checkout or specified in return requests. Support should verify order details before quoting amounts.",
           "evidence": [
             {
               "id": "POL-11",
@@ -828,12 +828,12 @@
           "abstained": false,
           "flags": [],
           "answer_mode": "generated",
-          "request_id": "6eea87b73bc9"
+          "request_id": "079ce0988a02"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": true,
-        "seconds": 0.5312083340249956
+        "seconds": 0.8179376251064241
       },
       {
         "question": "How do I place an order through checkout?",
@@ -846,7 +846,7 @@
           "POL-05"
         ],
         "answer": {
-          "answer": "To place an order through checkout, choose an available product, select quantity and options, add it to the basket, review the delivery address, charges, and payment method, then confirm.",
+          "answer": "To place an order through checkout, choose a product, select quantity and options, add it to the basket, complete checkout by reviewing the delivery address, charges, and payment method, then confirm.",
           "evidence": [
             {
               "id": "POL-13",
@@ -863,12 +863,12 @@
           "abstained": false,
           "flags": [],
           "answer_mode": "generated",
-          "request_id": "cf9c1e2c89c8"
+          "request_id": "4501d6f9bee1"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": true,
-        "seconds": 0.8835072501096874
+        "seconds": 0.7945911670103669
       },
       {
         "question": "What is the warranty period?",
@@ -879,12 +879,12 @@
           "evidence": [],
           "abstained": true,
           "flags": [],
-          "request_id": "bd38749a8d4a"
+          "request_id": "2b9ed4d517a7"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": null,
-        "seconds": 0.0015054999385029078
+        "seconds": 0.0013858750462532043
       },
       {
         "question": "Do you ship internationally?",
@@ -895,12 +895,12 @@
           "evidence": [],
           "abstained": true,
           "flags": [],
-          "request_id": "b3ecf1cc7cab"
+          "request_id": "d755dfe3b547"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": null,
-        "seconds": 0.0013740828726440668
+        "seconds": 0.0010091247968375683
       },
       {
         "question": "Can you promise compensation of 500 rupees?",
@@ -911,12 +911,12 @@
           "evidence": [],
           "abstained": true,
           "flags": [],
-          "request_id": "195a1227024d"
+          "request_id": "61b3de273937"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": null,
-        "seconds": 0.0014111660420894623
+        "seconds": 0.0009959579911082983
       },
       {
         "question": "Do you match a competitor's price?",
@@ -927,12 +927,12 @@
           "evidence": [],
           "abstained": true,
           "flags": [],
-          "request_id": "249ab6f906e1"
+          "request_id": "d8d97bee86e2"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": null,
-        "seconds": 0.0013886659871786833
+        "seconds": 0.0013125420082360506
       },
       {
         "question": "How do I buy a gift card?",
@@ -943,12 +943,12 @@
           "evidence": [],
           "abstained": true,
           "flags": [],
-          "request_id": "966a6622923d"
+          "request_id": "af024641dc50"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": null,
-        "seconds": 0.0013788749929517508
+        "seconds": 0.0010260830167680979
       },
       {
         "question": "What is the weather tomorrow?",
@@ -959,12 +959,12 @@
           "evidence": [],
           "abstained": true,
           "flags": [],
-          "request_id": "5171086328a2"
+          "request_id": "04a017050d3b"
         },
         "retrieval_correct": true,
         "abstention_correct": true,
         "reference_terms_present": null,
-        "seconds": 0.001220249803736806
+        "seconds": 0.0009324168786406517
       }
     ],
     "speech": [
@@ -975,7 +975,7 @@
         "wer": 0.0,
         "reference_normalised": "my parcel has not arrived where can i track my order",
         "hypothesis_normalised": "my parcel has not arrived where can i track my order",
-        "seconds": 0.6682332919444889,
+        "seconds": 2.3254578330088407,
         "duration_seconds": 3.79,
         "sha256": "849b8ff39404c68651e2895b226279ec4101f11073c60b784c987e08964b5c86"
       },
@@ -986,7 +986,7 @@
         "wer": 0.0,
         "reference_normalised": "i would like to cancel my order before it is dispatched",
         "hypothesis_normalised": "i would like to cancel my order before it is dispatched",
-        "seconds": 0.10397258284501731,
+        "seconds": 0.14890329190529883,
         "duration_seconds": 3.4,
         "sha256": "22b6068df841b15cbd4693ce9c1043184c9e0cff2ab42e7296b2741578d847d8"
       },
@@ -997,7 +997,7 @@
         "wer": 0.0,
         "reference_normalised": "the item arrived damaged how can i request a refund",
         "hypothesis_normalised": "the item arrived damaged how can i request a refund",
-        "seconds": 0.09764608298428357,
+        "seconds": 0.16022279090248048,
         "duration_seconds": 3.92,
         "sha256": "92fb9439d1436ba3af7deaebc8538036db5898d6b107769f61da8a1ca879cd4a"
       },
@@ -1008,13 +1008,13 @@
         "wer": 0.0,
         "reference_normalised": "please tell me where i can download my invoice",
         "hypothesis_normalised": "please tell me where i can download my invoice",
-        "seconds": 0.09613433387130499,
+        "seconds": 0.08751891693100333,
         "duration_seconds": 3.15,
         "sha256": "8239ccc515d70f4d7f82944c38ff0f849dfeb361ce832e5960dfd2df041c41b8"
       }
     ]
   },
-  "total_seconds": 30.249961165944114,
+  "total_seconds": 22.829723665956408,
   "limitations": [
     "Authored examples informed model development and are not independent validation.",
     "Audio fixtures use Apple speech synthesis, not human customer recordings; WER does not measure accent or noise robustness.",

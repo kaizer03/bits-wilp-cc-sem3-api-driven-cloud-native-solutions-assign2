@@ -30,6 +30,12 @@
       "observation": "Initialisation consumed approximately 10.3 GiB in the container before a complete case result was available. The check was stopped.",
       "decision": "Provide a smaller CPU generation profile and validate that profile before deployment.",
       "scope": "This is a portability finding, not a cloud measurement."
+    },
+    {
+      "area": "Compact generation output",
+      "observation": "The compact CPU model returned a nonconforming structured response during its first case check.",
+      "response": "Use separate plain-text summarisation, reply and policy-answer calls. The API constructs the JSON response and validates nonempty text.",
+      "limitation": "Smaller-model factual quality remains a separate evaluation concern."
     }
   ]
 }

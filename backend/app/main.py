@@ -119,9 +119,10 @@ def _analyse(ticket_id:int):
     intent=record(ticket_id,'intent',service.intent_version,lambda:service.intent(message),request_id)
     sentiment=record(ticket_id,'sentiment',MODEL_IDS['sentiment'],lambda:service.sentiment(message),request_id)
     evidence=record(ticket_id,'retrieval',MODEL_IDS['embedding'],lambda:retrieve(message,intent['label']),request_id)
-    instruction='Return JSON with exactly two string fields: "summary" (one sentence about the customer issue) and "reply" (a polite response under 110 words). Use the supplied policy evidence only. Explain any relevant eligibility conditions. Do not claim you know the order state. If evidence is empty, ask for human review rather than making policy claims.'
-    generated=record(ticket_id,'summary_and_reply',service.generation_model_id,lambda:service.generate(instruction,{'customer_message':message,'policy':evidence[:1]},350,required_fields=('summary','reply')),request_id)
-    if not isinstance(generated.get('summary'),str) or not isinstance(generated.get('reply'),str):raise HTTPException(502,'The model output is missing a summary or reply. Please retry.')
+    context={'customer_message':message,'policy':evidence[:1]}
+    summary=record(ticket_id,'summary',service.generation_model_id,lambda:service.generate('Summarise the customer issue in one sentence. Do not give advice or invent facts.',{'customer_message':message},80),request_id)
+    reply=record(ticket_id,'reply_draft',service.generation_model_id,lambda:service.generate('Write a polite customer-service reply under 100 words. Explain relevant eligibility conditions from the policy. Do not promise an action or outcome. If evidence is missing, ask for human review.',context,220),request_id)
+    generated={'summary':summary,'reply':reply}
     flags=grounding_flags(generated['reply'],message+' '+json.dumps(evidence[:1]))
     if not evidence:flags.append('No matching policy evidence. Human review is required.')
     if not intent['valid']:flags.append('The intent model produced an unrecognised label.')
@@ -189,8 +190,7 @@ def ask(payload:Question):
         return {'answer':'The published store policies do not contain enough information to answer this question. Please request human review.','evidence':[],'abstained':True,'flags':[],'request_id':rid}
     mode='generated';flags=[]
     try:
-        result=record(None,'policy_answer',service.generation_model_id,lambda:service.generate('Answer the question using only the supplied policy. Return JSON with one string field "answer". Keep it under 100 words. If the policy does not answer it, say human review is needed.',{'question':payload.question,'policy':evidence[:1]},220,required_fields=('answer',)),rid)
-        answer=result.get('answer')
+        answer=record(None,'policy_answer',service.generation_model_id,lambda:service.generate('Answer the question using only the supplied policy. Keep the answer under 80 words. If the policy does not answer it, say human review is needed.',{'question':payload.question,'policy':evidence[:1]},180),rid)
         if not isinstance(answer,str):raise RuntimeError('The model returned an invalid answer.')
         flags=grounding_flags(answer,evidence[0]['content'])
     except ModelUnavailable:

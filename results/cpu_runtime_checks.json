@@ -1,0 +1,366 @@
+{
+  "url": "http://127.0.0.1:8093",
+  "scope": "Functional checks against a dedicated local instance. No production, cloud or load-test claim.",
+  "checks": [
+    {
+      "operation": "/api/health",
+      "status": 200,
+      "seconds": 0.003175250021740794,
+      "result": {
+        "status": "ok",
+        "version": "1.0.0",
+        "model_device": "cpu",
+        "prompt_version": "support-1.2",
+        "time": "2026-11-01T05:00:07.911386+00:00"
+      }
+    },
+    {
+      "operation": "/api/models",
+      "status": 200,
+      "seconds": 0.0029481251258403063,
+      "result": {
+        "device": "cpu",
+        "environment": "local",
+        "generation_profile": "compact",
+        "active_generation_model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "models": [
+          {
+            "name": "intent_base",
+            "model_id": "google/flan-t5-small",
+            "revision": "0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab",
+            "directory": "intent_base",
+            "ready": true,
+            "loaded": false
+          },
+          {
+            "name": "generation",
+            "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+            "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+            "directory": "generation",
+            "ready": true,
+            "loaded": false
+          },
+          {
+            "name": "sentiment",
+            "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+            "revision": "3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7",
+            "directory": "sentiment",
+            "ready": true,
+            "loaded": false
+          },
+          {
+            "name": "speech",
+            "model_id": "openai/whisper-base.en",
+            "revision": "911407f4214e0e1d82085af863093ec0b66f9cd6",
+            "directory": "speech",
+            "ready": true,
+            "loaded": false
+          },
+          {
+            "name": "embedding",
+            "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+            "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+            "directory": "embedding",
+            "ready": true,
+            "loaded": false
+          },
+          {
+            "name": "generation_cpu",
+            "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+            "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+            "directory": "generation_cpu",
+            "ready": true,
+            "loaded": false
+          },
+          {
+            "name": "intent",
+            "model_id": "northstar-intent-2",
+            "ready": true,
+            "loaded": false
+          }
+        ]
+      }
+    },
+    {
+      "operation": "/api/tickets",
+      "status": 201,
+      "seconds": 0.006304374895989895,
+      "result": {
+        "id": 1,
+        "subject": "Runtime verification",
+        "customer": "Sample Customer",
+        "message": "Please cancel my order before it is dispatched.",
+        "channel": "text",
+        "status": "new",
+        "created_at": "2026-11-01T05:00:07.917451+00:00",
+        "updated_at": "2026-11-01T05:00:07.917457+00:00",
+        "approved_reply": "",
+        "approved_at": null,
+        "sample": false,
+        "reference": "NS-0001",
+        "analysis": {}
+      }
+    },
+    {
+      "operation": "/api/tickets/1/analyse",
+      "status": 200,
+      "seconds": 13.041099541820586,
+      "result": {
+        "id": 1,
+        "subject": "Runtime verification",
+        "customer": "Sample Customer",
+        "message": "Please cancel my order before it is dispatched.",
+        "channel": "text",
+        "status": "review",
+        "created_at": "2026-11-01T05:00:07.917451+00:00",
+        "updated_at": "2026-11-01T05:00:20.953836+00:00",
+        "approved_reply": "",
+        "approved_at": null,
+        "sample": false,
+        "reference": "NS-0001",
+        "analysis": {
+          "intent": {
+            "label": "cancel_order",
+            "negative_mean_log_likelihood": 5.423584298114292e-05,
+            "raw": "cancel order",
+            "model": "northstar-intent-2",
+            "valid": true,
+            "decoding": "mean conditional label log likelihood; the score is not a calibrated confidence"
+          },
+          "sentiment": {
+            "label": "negative",
+            "score": 0.8151,
+            "scores": {
+              "negative": 0.8151,
+              "neutral": 0.1756,
+              "positive": 0.0093
+            },
+            "model": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+            "note": "Model probability is not a calibrated estimate of customer emotion."
+          },
+          "summary": "Please cancel your order before it is dispatched.",
+          "reply": "Hello,\n\nI'm sorry to hear about your canceled order. Can you please provide me with more details so I can assist you better?\n\nThank you.",
+          "evidence": [
+            {
+              "id": "POL-02",
+              "title": "Cancel an order",
+              "category": "Orders",
+              "intents": [
+                "cancel_order"
+              ],
+              "content": "An order can be cancelled before dispatch through My Orders. Dispatched orders cannot be cancelled; the customer can request a return after delivery. A support agent must confirm the dispatch state before confirming cancellation. Cancellation eligibility does not mean a cancellation has been executed.",
+              "score": 0.7702,
+              "policy_version": "2026.11.01"
+            },
+            {
+              "id": "POL-11",
+              "title": "Fees and delivery charges",
+              "category": "Payments",
+              "intents": [
+                "check_cancellation_fee"
+              ],
+              "content": "There is no store cancellation fee for an eligible order cancelled before dispatch. Delivery charges and any return collection charge are displayed at checkout or in the specific return request. Support must check the applicable order details before quoting an amount.",
+              "score": 0.4356,
+              "policy_version": "2026.11.01"
+            }
+          ],
+          "flags": [],
+          "request_id": "1c027f2b74b3",
+          "analysed_at": "2026-11-01T05:00:20.951004+00:00",
+          "prompt_version": "support-1.2",
+          "policy_version": "2026.11.01"
+        }
+      }
+    },
+    {
+      "operation": "/api/knowledge/ask",
+      "status": 200,
+      "seconds": 4.011943625053391,
+      "result": {
+        "answer": "Yes, you can cancel an order after dispatch. Contact support for assistance.",
+        "evidence": [
+          {
+            "id": "POL-02",
+            "title": "Cancel an order",
+            "category": "Orders",
+            "intents": [
+              "cancel_order"
+            ],
+            "content": "An order can be cancelled before dispatch through My Orders. Dispatched orders cannot be cancelled; the customer can request a return after delivery. A support agent must confirm the dispatch state before confirming cancellation. Cancellation eligibility does not mean a cancellation has been executed.",
+            "score": 0.7287,
+            "policy_version": "2026.11.01"
+          }
+        ],
+        "abstained": false,
+        "flags": [],
+        "answer_mode": "generated",
+        "request_id": "09f303a77350"
+      }
+    },
+    {
+      "operation": "/api/knowledge/ask",
+      "status": 200,
+      "seconds": 0.0030474169179797173,
+      "result": {
+        "answer": "The published store policies do not contain enough information to answer this question. Please request human review.",
+        "evidence": [],
+        "abstained": true,
+        "flags": [],
+        "request_id": "82c5804dee6d"
+      }
+    },
+    {
+      "operation": "/api/transcribe",
+      "status": 200,
+      "seconds": 1.9192149171140045,
+      "result": {
+        "text": "I would like to cancel my order before it is dispatched.",
+        "duration_seconds": 3.4,
+        "model": "openai/whisper-base.en",
+        "language": "en"
+      }
+    },
+    {
+      "operation": "/api/tickets/1/approve",
+      "status": 200,
+      "seconds": 0.006508749909698963,
+      "result": {
+        "id": 1,
+        "subject": "Runtime verification",
+        "customer": "Sample Customer",
+        "message": "Please cancel my order before it is dispatched.",
+        "channel": "text",
+        "status": "approved",
+        "created_at": "2026-11-01T05:00:07.917451+00:00",
+        "updated_at": "2026-11-01T05:00:26.902773+00:00",
+        "approved_reply": "Cancellation can be requested before dispatch. Please verify the order dispatch status before confirming it.",
+        "approved_at": "2026-11-01T05:00:26.902764+00:00",
+        "sample": false,
+        "reference": "NS-0001",
+        "analysis": {
+          "intent": {
+            "label": "cancel_order",
+            "negative_mean_log_likelihood": 5.423584298114292e-05,
+            "raw": "cancel order",
+            "model": "northstar-intent-2",
+            "valid": true,
+            "decoding": "mean conditional label log likelihood; the score is not a calibrated confidence"
+          },
+          "sentiment": {
+            "label": "negative",
+            "score": 0.8151,
+            "scores": {
+              "negative": 0.8151,
+              "neutral": 0.1756,
+              "positive": 0.0093
+            },
+            "model": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+            "note": "Model probability is not a calibrated estimate of customer emotion."
+          },
+          "summary": "Please cancel your order before it is dispatched.",
+          "reply": "Hello,\n\nI'm sorry to hear about your canceled order. Can you please provide me with more details so I can assist you better?\n\nThank you.",
+          "evidence": [
+            {
+              "id": "POL-02",
+              "title": "Cancel an order",
+              "category": "Orders",
+              "intents": [
+                "cancel_order"
+              ],
+              "content": "An order can be cancelled before dispatch through My Orders. Dispatched orders cannot be cancelled; the customer can request a return after delivery. A support agent must confirm the dispatch state before confirming cancellation. Cancellation eligibility does not mean a cancellation has been executed.",
+              "score": 0.7702,
+              "policy_version": "2026.11.01"
+            },
+            {
+              "id": "POL-11",
+              "title": "Fees and delivery charges",
+              "category": "Payments",
+              "intents": [
+                "check_cancellation_fee"
+              ],
+              "content": "There is no store cancellation fee for an eligible order cancelled before dispatch. Delivery charges and any return collection charge are displayed at checkout or in the specific return request. Support must check the applicable order details before quoting an amount.",
+              "score": 0.4356,
+              "policy_version": "2026.11.01"
+            }
+          ],
+          "flags": [],
+          "request_id": "1c027f2b74b3",
+          "analysed_at": "2026-11-01T05:00:20.951004+00:00",
+          "prompt_version": "support-1.2",
+          "policy_version": "2026.11.01"
+        }
+      }
+    },
+    {
+      "operation": "/api/tickets/1/status?status=resolved",
+      "status": 200,
+      "seconds": 0.0035377079620957375,
+      "result": {
+        "id": 1,
+        "subject": "Runtime verification",
+        "customer": "Sample Customer",
+        "message": "Please cancel my order before it is dispatched.",
+        "channel": "text",
+        "status": "resolved",
+        "created_at": "2026-11-01T05:00:07.917451+00:00",
+        "updated_at": "2026-11-01T05:00:26.907558+00:00",
+        "approved_reply": "Cancellation can be requested before dispatch. Please verify the order dispatch status before confirming it.",
+        "approved_at": "2026-11-01T05:00:26.902764+00:00",
+        "sample": false,
+        "reference": "NS-0001",
+        "analysis": {
+          "intent": {
+            "label": "cancel_order",
+            "negative_mean_log_likelihood": 5.423584298114292e-05,
+            "raw": "cancel order",
+            "model": "northstar-intent-2",
+            "valid": true,
+            "decoding": "mean conditional label log likelihood; the score is not a calibrated confidence"
+          },
+          "sentiment": {
+            "label": "negative",
+            "score": 0.8151,
+            "scores": {
+              "negative": 0.8151,
+              "neutral": 0.1756,
+              "positive": 0.0093
+            },
+            "model": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+            "note": "Model probability is not a calibrated estimate of customer emotion."
+          },
+          "summary": "Please cancel your order before it is dispatched.",
+          "reply": "Hello,\n\nI'm sorry to hear about your canceled order. Can you please provide me with more details so I can assist you better?\n\nThank you.",
+          "evidence": [
+            {
+              "id": "POL-02",
+              "title": "Cancel an order",
+              "category": "Orders",
+              "intents": [
+                "cancel_order"
+              ],
+              "content": "An order can be cancelled before dispatch through My Orders. Dispatched orders cannot be cancelled; the customer can request a return after delivery. A support agent must confirm the dispatch state before confirming cancellation. Cancellation eligibility does not mean a cancellation has been executed.",
+              "score": 0.7702,
+              "policy_version": "2026.11.01"
+            },
+            {
+              "id": "POL-11",
+              "title": "Fees and delivery charges",
+              "category": "Payments",
+              "intents": [
+                "check_cancellation_fee"
+              ],
+              "content": "There is no store cancellation fee for an eligible order cancelled before dispatch. Delivery charges and any return collection charge are displayed at checkout or in the specific return request. Support must check the applicable order details before quoting an amount.",
+              "score": 0.4356,
+              "policy_version": "2026.11.01"
+            }
+          ],
+          "flags": [],
+          "request_id": "1c027f2b74b3",
+          "analysed_at": "2026-11-01T05:00:20.951004+00:00",
+          "prompt_version": "support-1.2",
+          "policy_version": "2026.11.01"
+        }
+      }
+    }
+  ]
+}

@@ -20,4 +20,4 @@ MODEL_IDS = {
     'speech': 'openai/whisper-base.en',
     'embedding': 'sentence-transformers/all-MiniLM-L6-v2',
 }
-PROMPT_VERSION = 'support-1.1'
+PROMPT_VERSION = 'support-1.2'
