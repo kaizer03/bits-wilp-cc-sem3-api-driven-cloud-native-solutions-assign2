@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-11-01T10:24:01.514140+00:00",
+  "recorded_at": "2026-11-01T10:29:32.724094+00:00",
   "scope": "Local Chrome browser checks; not a device lab or broad browser compatibility study.",
   "viewport": {
     "width": 390,
@@ -20,11 +20,24 @@
     "overview_action_buttons": "passed after wrapping fix",
     "page_navigation_scroll_reset": "passed",
     "horizontal_table_scroll": "Contained within table panels; page width remains 390px.",
-    "audio_file_upload": "pending"
+    "audio_file_upload": "passed",
+    "voice_case_creation_and_analysis": "passed"
   },
   "limitations": [
-    "Audio upload remains pending in the browser. The transcription API was verified separately.",
     "Microphone capture and natural human audio have not been evaluated.",
     "Single local Chrome browser and phone-size viewport."
-  ]
+  ],
+  "tested_application_revision": "a5a23338f79dc75daa5afd9477c941c6cd37ec69",
+  "voice_case": {
+    "reference": "NS-0010",
+    "fixture": "data/evaluation/audio/invoice.wav",
+    "fixture_sha256": "8239ccc515d70f4d7f82944c38ff0f849dfeb361ce832e5960dfd2df041c41b8",
+    "fixture_kind": "Apple speech synthesis",
+    "duration_seconds": 3.15,
+    "transcript": "Please, tell me where I can download my invoice.",
+    "intent": "get_invoice",
+    "sentiment": "neutral",
+    "status": "review",
+    "observation": "The generated draft contains contact and signature placeholders and remains unapproved for agent review."
+  }
 }
