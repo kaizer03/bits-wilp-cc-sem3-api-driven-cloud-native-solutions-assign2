@@ -1,0 +1,35 @@
+{
+  "findings": [
+    {
+      "area": "Intent generalisation",
+      "observation": "Version 1 reached 99.63% on a templated public test sample but only 77.78% on 27 authored diagnostic requests.",
+      "response": "Add a documented scenario supplement and use identical legal-label likelihood scoring for both neural baselines. Preserve earlier results.",
+      "limitation": "Supplement and decoding changes are not isolated in a single-factor ablation; diagnostic data informed development."
+    },
+    {
+      "area": "Unsupported policy claim",
+      "observation": "An early generated complaint answer introduced a 7-day deadline absent from the complaint policy.",
+      "response": "Restrict generation to the top retrieved policy, flag unsupported numbers and completed-action claims, and substitute verbatim policy text when checks fail.",
+      "limitation": "Heuristic checks are incomplete; every response draft requires review."
+    },
+    {
+      "area": "Output structure",
+      "observation": "An early checkout answer returned prose instead of the requested JSON.",
+      "response": "Validate the output schema and preserve access to the published policy on generation failure.",
+      "limitation": "A fallback is a policy excerpt, not a successful generated answer."
+    },
+    {
+      "area": "CPU portability",
+      "observation": "The same trained intent model loads and predicts in a local Linux ARM64 CPU container.",
+      "response": "Keep Linux runtime, model artifacts and configuration separate from native Apple GPU training.",
+      "limitation": "This does not establish AMD64 or BITS lab execution."
+    },
+    {
+      "environment": "Local Linux ARM64 container",
+      "profile": "Qwen2.5-1.5B, CPU, dynamic int8 initialisation",
+      "observation": "Initialisation consumed approximately 10.3 GiB in the container before a complete case result was available. The check was stopped.",
+      "decision": "Provide a smaller CPU generation profile and validate that profile before deployment.",
+      "scope": "This is a portability finding, not a cloud measurement."
+    }
+  ]
+}

@@ -1,0 +1,329 @@
+{
+  "scope": "Project-authored development diagnostics. These cases were used to identify model weaknesses and guide the scenario supplement; scores are not independent validation. Public-data test examples remain separate.",
+  "intent": [
+    {
+      "text": "Please stop the purchase I made this morning before the warehouse sends it out.",
+      "label": "cancel_order"
+    },
+    {
+      "text": "I picked the wrong colour. Can the blue item in my order be exchanged for the red option before dispatch?",
+      "label": "change_order"
+    },
+    {
+      "text": "The address on my current purchase has the wrong flat number. How can I correct it?",
+      "label": "change_shipping_address"
+    },
+    {
+      "text": "Will you deduct a charge if I cancel before my parcel leaves the warehouse?",
+      "label": "check_cancellation_fee"
+    },
+    {
+      "text": "The tax document for my purchase seems incorrect. Can someone check the invoice details?",
+      "label": "check_invoice"
+    },
+    {
+      "text": "Does your checkout accept a debit card or UPI?",
+      "label": "check_payment_methods"
+    },
+    {
+      "text": "What conditions must I meet to get my money back for an unwanted product?",
+      "label": "check_refund_policy"
+    },
+    {
+      "text": "I want to raise a formal complaint about the repeated delivery failures.",
+      "label": "complaint"
+    },
+    {
+      "text": "Where can I find your customer service contact details?",
+      "label": "contact_customer_service"
+    },
+    {
+      "text": "I would like an actual person to review this issue rather than another automated answer.",
+      "label": "contact_human_agent"
+    },
+    {
+      "text": "I have never shopped here. How do I sign up for a new customer account?",
+      "label": "create_account"
+    },
+    {
+      "text": "I no longer use this store and want my customer profile permanently removed.",
+      "label": "delete_account"
+    },
+    {
+      "text": "Is there an express shipping option as well as standard shipping?",
+      "label": "delivery_options"
+    },
+    {
+      "text": "If I choose standard shipping, how many working days should delivery take?",
+      "label": "delivery_period"
+    },
+    {
+      "text": "My surname has changed. Where can I update the name on my profile?",
+      "label": "edit_account"
+    },
+    {
+      "text": "I need to download the invoice for my last purchase for my records.",
+      "label": "get_invoice"
+    },
+    {
+      "text": "This item arrived broken. I would like to request my money back.",
+      "label": "get_refund"
+    },
+    {
+      "text": "Please tell me how to stop receiving the marketing newsletter.",
+      "label": "newsletter_subscription"
+    },
+    {
+      "text": "My bank shows a debit but checkout did not confirm an order. What should I do?",
+      "label": "payment_issue"
+    },
+    {
+      "text": "How do I buy a product from your website and complete checkout?",
+      "label": "place_order"
+    },
+    {
+      "text": "I cannot remember my login password. How can I get access again?",
+      "label": "recover_password"
+    },
+    {
+      "text": "The sign-up page keeps refusing my email address so I cannot finish registration.",
+      "label": "registration_problems"
+    },
+    {
+      "text": "The product was excellent and I would like to leave a review on its page.",
+      "label": "review"
+    },
+    {
+      "text": "Where do I save a new delivery address for future purchases?",
+      "label": "set_up_shipping_address"
+    },
+    {
+      "text": "I am logged into the wrong profile. How do I change to my other account?",
+      "label": "switch_account"
+    },
+    {
+      "text": "My parcel is on its way. Where can I look up its tracking progress?",
+      "label": "track_order"
+    },
+    {
+      "text": "I already requested a refund last week. Where can I check whether it has been issued?",
+      "label": "track_refund"
+    }
+  ],
+  "sentiment": [
+    {
+      "text": "I am furious. This is the third time my parcel has failed to arrive.",
+      "label": "negative"
+    },
+    {
+      "text": "The item was broken and the service has been awful.",
+      "label": "negative"
+    },
+    {
+      "text": "I am very disappointed with the delay and the lack of updates.",
+      "label": "negative"
+    },
+    {
+      "text": "This has been a terrible experience. I regret placing the order.",
+      "label": "negative"
+    },
+    {
+      "text": "Thank you for the wonderful service. The delivery was perfect!",
+      "label": "positive"
+    },
+    {
+      "text": "I love this product and I am delighted with my purchase.",
+      "label": "positive"
+    },
+    {
+      "text": "The team was extremely helpful and solved my issue quickly. Thanks!",
+      "label": "positive"
+    },
+    {
+      "text": "Excellent quality and a great shopping experience. I am very happy.",
+      "label": "positive"
+    },
+    {
+      "text": "What payment methods can I use at checkout?",
+      "label": "neutral"
+    },
+    {
+      "text": "I would like to download a copy of the invoice.",
+      "label": "neutral"
+    },
+    {
+      "text": "Where is the option to change my account email?",
+      "label": "neutral"
+    },
+    {
+      "text": "How many business days does standard delivery take?",
+      "label": "neutral"
+    }
+  ],
+  "policy": [
+    {
+      "question": "How long does standard delivery take after dispatch?",
+      "policy": "POL-01",
+      "must_contain": [
+        "3",
+        "5"
+      ]
+    },
+    {
+      "question": "Where do I find my parcel tracking link?",
+      "policy": "POL-01",
+      "must_contain": [
+        "orders"
+      ]
+    },
+    {
+      "question": "Can I cancel an order before dispatch?",
+      "policy": "POL-02",
+      "must_contain": [
+        "dispatch"
+      ]
+    },
+    {
+      "question": "Can a dispatched order still be cancelled?",
+      "policy": "POL-02",
+      "must_contain": [
+        "return"
+      ]
+    },
+    {
+      "question": "Can I change the shipping address before dispatch?",
+      "policy": "POL-03",
+      "must_contain": [
+        "dispatch"
+      ]
+    },
+    {
+      "question": "What is the time limit for requesting a return?",
+      "policy": "POL-04",
+      "must_contain": [
+        "14"
+      ]
+    },
+    {
+      "question": "How long does an eligible refund take after inspection?",
+      "policy": "POL-04",
+      "must_contain": [
+        "5",
+        "7"
+      ]
+    },
+    {
+      "question": "Do you accept UPI and debit cards?",
+      "policy": "POL-05",
+      "must_contain": [
+        "upi"
+      ]
+    },
+    {
+      "question": "Where can I download the invoice for my confirmed order?",
+      "policy": "POL-05",
+      "must_contain": [
+        "orders"
+      ]
+    },
+    {
+      "question": "What should I check when my account registration email fails?",
+      "policy": "POL-06",
+      "must_contain": [
+        "email"
+      ]
+    },
+    {
+      "question": "How can I reset a forgotten password?",
+      "policy": "POL-07",
+      "must_contain": [
+        "password"
+      ]
+    },
+    {
+      "question": "Where can I request deletion of my account?",
+      "policy": "POL-07",
+      "must_contain": [
+        "settings"
+      ]
+    },
+    {
+      "question": "What are the customer service opening hours?",
+      "policy": "POL-08",
+      "must_contain": [
+        "09",
+        "18"
+      ]
+    },
+    {
+      "question": "How can I raise a complaint about my order?",
+      "policy": "POL-09",
+      "must_contain": [
+        "help"
+      ]
+    },
+    {
+      "question": "How can I stop the newsletter emails?",
+      "policy": "POL-10",
+      "must_contain": [
+        "unsubscribe"
+      ]
+    },
+    {
+      "question": "Is there a cancellation fee before dispatch?",
+      "policy": "POL-11",
+      "must_contain": [
+        "no"
+      ]
+    },
+    {
+      "question": "How do I place an order through checkout?",
+      "policy": "POL-13",
+      "must_contain": [
+        "checkout"
+      ]
+    },
+    {
+      "question": "What is the warranty period?",
+      "policy": null
+    },
+    {
+      "question": "Do you ship internationally?",
+      "policy": null
+    },
+    {
+      "question": "Can you promise compensation of 500 rupees?",
+      "policy": null
+    },
+    {
+      "question": "Do you match a competitor's price?",
+      "policy": null
+    },
+    {
+      "question": "How do I buy a gift card?",
+      "policy": null
+    },
+    {
+      "question": "What is the weather tomorrow?",
+      "policy": null
+    }
+  ],
+  "audio": [
+    {
+      "id": "delivery",
+      "text": "My parcel has not arrived. Where can I track my order?"
+    },
+    {
+      "id": "cancel",
+      "text": "I would like to cancel my order before it is dispatched."
+    },
+    {
+      "id": "refund",
+      "text": "The item arrived damaged. How can I request a refund?"
+    },
+    {
+      "id": "invoice",
+      "text": "Please tell me where I can download my invoice."
+    }
+  ]
+}

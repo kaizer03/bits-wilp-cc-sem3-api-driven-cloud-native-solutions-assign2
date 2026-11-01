@@ -1,0 +1,17 @@
+.venv/
+.runtime/
+.models/
+.cache/
+.datasets/
+.env
+.env.*
+!.env.example
+__pycache__/
+.pytest_cache/
+*.pyc
+node_modules/
+frontend/dist/
+training/checkpoints/
+.DS_Store
+*.log
+*.tsbuildinfo

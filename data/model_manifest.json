@@ -1,0 +1,40 @@
+{
+  "models": {
+    "intent_base": {
+      "model_id": "google/flan-t5-small",
+      "revision": "0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab",
+      "directory": "intent_base"
+    },
+    "generation": {
+      "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "directory": "generation"
+    },
+    "sentiment": {
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "revision": "3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7",
+      "directory": "sentiment"
+    },
+    "speech": {
+      "model_id": "openai/whisper-base.en",
+      "revision": "911407f4214e0e1d82085af863093ec0b66f9cd6",
+      "directory": "speech"
+    },
+    "embedding": {
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "directory": "embedding"
+    },
+    "generation_cpu": {
+      "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "directory": "generation_cpu"
+    }
+  },
+  "dataset": {
+    "id": "bitext/Bitext-customer-support-llm-chatbot-training-dataset",
+    "revision": "430d1a89bd93bd1fa23c16f29dd53e73f0087443",
+    "source_file": "Bitext_Sample_Customer_Support_Training_Dataset_27K_responses-v11.csv",
+    "sha256": "6f81102b0100b97b8468eb04368033a23206bf1fde9d53500d5806ec1001a434"
+  }
+}

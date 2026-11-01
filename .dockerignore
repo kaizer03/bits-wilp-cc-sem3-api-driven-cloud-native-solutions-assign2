@@ -1,0 +1,13 @@
+.git
+.venv
+.models
+.cache
+.datasets
+.runtime
+.env*
+frontend/node_modules
+frontend/dist
+training/checkpoints
+__pycache__
+.pytest_cache
+*.log

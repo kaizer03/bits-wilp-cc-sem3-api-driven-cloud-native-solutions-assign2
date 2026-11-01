@@ -1,0 +1,137 @@
+{
+  "store": "Northstar Retail",
+  "version": "2026.11.01",
+  "scope": "Fictional retail policies for the CCZG506 application demonstration. No connection to a live order or payment system.",
+  "articles": [
+    {
+      "id": "POL-01",
+      "title": "Delivery and tracking",
+      "category": "Orders",
+      "intents": [
+        "track_order",
+        "delivery_period",
+        "delivery_options"
+      ],
+      "content": "Standard delivery takes 3 to 5 business days after dispatch. Express delivery takes 1 to 2 business days after dispatch. A tracking link appears in My Orders once the parcel is dispatched. If a parcel is overdue, the support agent must verify the order number and tracking status before escalating to the carrier. The application cannot verify a live parcel location or promise a new arrival date."
+    },
+    {
+      "id": "POL-02",
+      "title": "Cancel an order",
+      "category": "Orders",
+      "intents": [
+        "cancel_order"
+      ],
+      "content": "An order can be cancelled before dispatch through My Orders. Dispatched orders cannot be cancelled; the customer can request a return after delivery. A support agent must confirm the dispatch state before confirming cancellation. Cancellation eligibility does not mean a cancellation has been executed."
+    },
+    {
+      "id": "POL-03",
+      "title": "Change an order or address",
+      "category": "Orders",
+      "intents": [
+        "change_order",
+        "change_shipping_address",
+        "set_up_shipping_address"
+      ],
+      "content": "Order contents and delivery addresses can be changed before dispatch, subject to stock and address serviceability. After dispatch, changes are not guaranteed and require carrier review. Customers can save a shipping address in Account Settings. Never confirm an address or order change without checking the order record."
+    },
+    {
+      "id": "POL-04",
+      "title": "Returns and refunds",
+      "category": "Returns",
+      "intents": [
+        "get_refund",
+        "check_refund_policy",
+        "track_refund"
+      ],
+      "content": "A return request must be raised within 14 calendar days of delivery. Items must be unused and include the original packaging. Damaged or incorrect items require photographs for review. Once the returned item is received and inspected, an eligible refund is issued to the original payment method within 5 to 7 business days. Customers can view an existing refund in My Orders. A support agent must verify the actual return and refund records before confirming approval, issue, receipt or payment status."
+    },
+    {
+      "id": "POL-05",
+      "title": "Payments and invoices",
+      "category": "Payments",
+      "intents": [
+        "payment_issue",
+        "check_payment_methods",
+        "get_invoice",
+        "check_invoice"
+      ],
+      "content": "The store accepts credit cards, debit cards and UPI. Never request a full card number, CVV, OTP or UPI PIN. If a payment appears debited but the order is unconfirmed, the customer should provide the order reference and transaction reference to support through the secure account form. Invoices for confirmed orders can be downloaded from My Orders. A missing or incorrect invoice requires order verification; do not invent an invoice or confirm payment reversal."
+    },
+    {
+      "id": "POL-06",
+      "title": "Create or edit an account",
+      "category": "Account",
+      "intents": [
+        "create_account",
+        "edit_account",
+        "registration_problems"
+      ],
+      "content": "Customers can create an account with an email address and complete email verification. Profile details can be edited in Account Settings. For registration issues, check whether the email is already registered and whether the verification email is in spam. Support must not ask for the account password or verification code."
+    },
+    {
+      "id": "POL-07",
+      "title": "Account access and closure",
+      "category": "Account",
+      "intents": [
+        "recover_password",
+        "delete_account",
+        "switch_account"
+      ],
+      "content": "To recover access, use Forgot Password on the sign-in page and follow the reset link sent to the registered email. Sign out before switching to another account. Account deletion requests are made through Account Settings and require identity verification in the secure account flow. The support application cannot reset passwords, delete accounts or verify identity itself."
+    },
+    {
+      "id": "POL-08",
+      "title": "Customer service and escalation",
+      "category": "Support",
+      "intents": [
+        "contact_customer_service",
+        "contact_human_agent"
+      ],
+      "content": "Customer service is available Monday to Saturday from 09:00 to 18:00 IST. Customers can request human review through the Help page. Support agents can record an escalation request in a case, but must not promise a callback time or completed transfer without confirmation from the support team."
+    },
+    {
+      "id": "POL-09",
+      "title": "Feedback and complaints",
+      "category": "Support",
+      "intents": [
+        "review",
+        "complaint"
+      ],
+      "content": "Customers can leave a review on the product page after purchase or raise a complaint through Help. A complaint should include the order reference and a clear description. The team reviews complaints and requests any missing information. Do not claim that compensation or a replacement has been approved without an authorised decision."
+    },
+    {
+      "id": "POL-10",
+      "title": "Newsletter preferences",
+      "category": "Account",
+      "intents": [
+        "newsletter_subscription"
+      ],
+      "content": "Newsletter preferences can be changed in Account Settings or through the unsubscribe link in the email. Transactional order and security messages continue even when marketing newsletters are disabled."
+    },
+    {
+      "id": "POL-11",
+      "title": "Fees and delivery charges",
+      "category": "Payments",
+      "intents": [
+        "check_cancellation_fee"
+      ],
+      "content": "There is no store cancellation fee for an eligible order cancelled before dispatch. Delivery charges and any return collection charge are displayed at checkout or in the specific return request. Support must check the applicable order details before quoting an amount."
+    },
+    {
+      "id": "POL-12",
+      "title": "Information outside published policy",
+      "category": "Support",
+      "intents": [],
+      "content": "The published store guide does not specify warranty duration, international shipping availability, price matching, gift cards, loyalty benefits or compensation amounts. These questions require human review. Support must not invent policy terms or treat absence of information as a denial of eligibility."
+    },
+    {
+      "id": "POL-13",
+      "title": "Place an order",
+      "category": "Orders",
+      "intents": [
+        "place_order"
+      ],
+      "content": "To place an order, choose an available product, select quantity and options, add it to the basket and complete checkout. Review the delivery address, charges and payment method before confirming. Product availability and final prices must be checked in the store checkout; this support application cannot place an order or reserve stock."
+    }
+  ]
+}

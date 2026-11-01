@@ -1,0 +1,15 @@
+{
+  "info":{"name":"Northstar Retail Support API","schema":"https://schema.getpostman.com/json/collection/v2.1.0/collection.json","description":"Local customer-support workflow, model comparison and operational evaluation."},
+  "variable":[{"key":"base_url","value":"http://127.0.0.1:8092"},{"key":"case_id","value":"1"}],
+  "item":[
+    {"name":"Health","request":{"method":"GET","url":"{{base_url}}/api/health"}},
+    {"name":"List cases","request":{"method":"GET","url":"{{base_url}}/api/tickets"}},
+    {"name":"Create case","request":{"method":"POST","url":"{{base_url}}/api/tickets","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"subject\": \"Cancel order\",\n  \"customer\": \"Sample Customer\",\n  \"message\": \"Please cancel my order before dispatch.\",\n  \"channel\": \"text\"\n}"}}},
+    {"name":"Analyse case","request":{"method":"POST","url":"{{base_url}}/api/tickets/{{case_id}}/analyse"}},
+    {"name":"Case history","request":{"method":"GET","url":"{{base_url}}/api/tickets/{{case_id}}"}},
+    {"name":"Policy question","request":{"method":"POST","url":"{{base_url}}/api/knowledge/ask","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"question\":\"Can I cancel an order after dispatch?\"}"}}},
+    {"name":"Compare intent models","request":{"method":"POST","url":"{{base_url}}/api/models/compare","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"question\":\"Please cancel my order before dispatch.\"}"}}},
+    {"name":"Model registry","request":{"method":"GET","url":"{{base_url}}/api/models"}},
+    {"name":"Operation traces and metrics","request":{"method":"GET","url":"{{base_url}}/api/operations"}}
+  ]
+}

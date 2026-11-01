@@ -1,0 +1,1025 @@
+{
+  "created_at": "2026-11-01T04:28:38.573796+00:00",
+  "scope": "Small authored diagnostics: 27 intent, 12 sentiment, 23 policy and 4 synthetic speech examples. Reference-term coverage is an automated proxy, not a human factuality score.",
+  "fixture_sha256": "14519517b863e3222a539f17304aed58ab74c1640f020a451d7692c1a2bb29f7",
+  "prompt_version": "support-1.0",
+  "policy_version": "2026.11.01",
+  "metrics": {
+    "authored_intent_accuracy": 0.7777777777777778,
+    "authored_intent_macro_f1": 0.6964285714285714,
+    "sentiment_accuracy": 1.0,
+    "retrieval_recall_at_2": 1.0,
+    "abstention_accuracy": 1.0,
+    "policy_reference_term_coverage": 1.0,
+    "policy_end_to_end_p95_seconds": 2.159098312584683,
+    "synthetic_speech_wer": 0.0
+  },
+  "rows": {
+    "intent": [
+      {
+        "text": "Please stop the purchase I made this morning before the warehouse sends it out.",
+        "label": "cancel_order",
+        "prediction": "delivery_period",
+        "correct": false
+      },
+      {
+        "text": "I picked the wrong colour. Can the blue item in my order be exchanged for the red option before dispatch?",
+        "label": "change_order",
+        "prediction": "change_shipping_address",
+        "correct": false
+      },
+      {
+        "text": "The address on my current purchase has the wrong flat number. How can I correct it?",
+        "label": "change_shipping_address",
+        "prediction": "change_shipping_address",
+        "correct": true
+      },
+      {
+        "text": "Will you deduct a charge if I cancel before my parcel leaves the warehouse?",
+        "label": "check_cancellation_fee",
+        "prediction": "delivery_period",
+        "correct": false
+      },
+      {
+        "text": "The tax document for my purchase seems incorrect. Can someone check the invoice details?",
+        "label": "check_invoice",
+        "prediction": "check_invoice",
+        "correct": true
+      },
+      {
+        "text": "Does your checkout accept a debit card or UPI?",
+        "label": "check_payment_methods",
+        "prediction": "check_payment_methods",
+        "correct": true
+      },
+      {
+        "text": "What conditions must I meet to get my money back for an unwanted product?",
+        "label": "check_refund_policy",
+        "prediction": "get_refund",
+        "correct": false
+      },
+      {
+        "text": "I want to raise a formal complaint about the repeated delivery failures.",
+        "label": "complaint",
+        "prediction": "complaint",
+        "correct": true
+      },
+      {
+        "text": "Where can I find your customer service contact details?",
+        "label": "contact_customer_service",
+        "prediction": "contact_customer_service",
+        "correct": true
+      },
+      {
+        "text": "I would like an actual person to review this issue rather than another automated answer.",
+        "label": "contact_human_agent",
+        "prediction": "review",
+        "correct": false
+      },
+      {
+        "text": "I have never shopped here. How do I sign up for a new customer account?",
+        "label": "create_account",
+        "prediction": "create_account",
+        "correct": true
+      },
+      {
+        "text": "I no longer use this store and want my customer profile permanently removed.",
+        "label": "delete_account",
+        "prediction": "delete_account",
+        "correct": true
+      },
+      {
+        "text": "Is there an express shipping option as well as standard shipping?",
+        "label": "delivery_options",
+        "prediction": "delivery_options",
+        "correct": true
+      },
+      {
+        "text": "If I choose standard shipping, how many working days should delivery take?",
+        "label": "delivery_period",
+        "prediction": "delivery_period",
+        "correct": true
+      },
+      {
+        "text": "My surname has changed. Where can I update the name on my profile?",
+        "label": "edit_account",
+        "prediction": "edit_account",
+        "correct": true
+      },
+      {
+        "text": "I need to download the invoice for my last purchase for my records.",
+        "label": "get_invoice",
+        "prediction": "get_invoice",
+        "correct": true
+      },
+      {
+        "text": "This item arrived broken. I would like to request my money back.",
+        "label": "get_refund",
+        "prediction": "get_refund",
+        "correct": true
+      },
+      {
+        "text": "Please tell me how to stop receiving the marketing newsletter.",
+        "label": "newsletter_subscription",
+        "prediction": "newsletter_subscription",
+        "correct": true
+      },
+      {
+        "text": "My bank shows a debit but checkout did not confirm an order. What should I do?",
+        "label": "payment_issue",
+        "prediction": "unrecognised",
+        "correct": false
+      },
+      {
+        "text": "How do I buy a product from your website and complete checkout?",
+        "label": "place_order",
+        "prediction": "place_order",
+        "correct": true
+      },
+      {
+        "text": "I cannot remember my login password. How can I get access again?",
+        "label": "recover_password",
+        "prediction": "recover_password",
+        "correct": true
+      },
+      {
+        "text": "The sign-up page keeps refusing my email address so I cannot finish registration.",
+        "label": "registration_problems",
+        "prediction": "registration_problems",
+        "correct": true
+      },
+      {
+        "text": "The product was excellent and I would like to leave a review on its page.",
+        "label": "review",
+        "prediction": "review",
+        "correct": true
+      },
+      {
+        "text": "Where do I save a new delivery address for future purchases?",
+        "label": "set_up_shipping_address",
+        "prediction": "set_up_shipping_address",
+        "correct": true
+      },
+      {
+        "text": "I am logged into the wrong profile. How do I change to my other account?",
+        "label": "switch_account",
+        "prediction": "switch_account",
+        "correct": true
+      },
+      {
+        "text": "My parcel is on its way. Where can I look up its tracking progress?",
+        "label": "track_order",
+        "prediction": "track_order",
+        "correct": true
+      },
+      {
+        "text": "I already requested a refund last week. Where can I check whether it has been issued?",
+        "label": "track_refund",
+        "prediction": "track_refund",
+        "correct": true
+      }
+    ],
+    "sentiment": [
+      {
+        "text": "I am furious. This is the third time my parcel has failed to arrive.",
+        "label": "negative",
+        "prediction": "negative",
+        "correct": true
+      },
+      {
+        "text": "The item was broken and the service has been awful.",
+        "label": "negative",
+        "prediction": "negative",
+        "correct": true
+      },
+      {
+        "text": "I am very disappointed with the delay and the lack of updates.",
+        "label": "negative",
+        "prediction": "negative",
+        "correct": true
+      },
+      {
+        "text": "This has been a terrible experience. I regret placing the order.",
+        "label": "negative",
+        "prediction": "negative",
+        "correct": true
+      },
+      {
+        "text": "Thank you for the wonderful service. The delivery was perfect!",
+        "label": "positive",
+        "prediction": "positive",
+        "correct": true
+      },
+      {
+        "text": "I love this product and I am delighted with my purchase.",
+        "label": "positive",
+        "prediction": "positive",
+        "correct": true
+      },
+      {
+        "text": "The team was extremely helpful and solved my issue quickly. Thanks!",
+        "label": "positive",
+        "prediction": "positive",
+        "correct": true
+      },
+      {
+        "text": "Excellent quality and a great shopping experience. I am very happy.",
+        "label": "positive",
+        "prediction": "positive",
+        "correct": true
+      },
+      {
+        "text": "What payment methods can I use at checkout?",
+        "label": "neutral",
+        "prediction": "neutral",
+        "correct": true
+      },
+      {
+        "text": "I would like to download a copy of the invoice.",
+        "label": "neutral",
+        "prediction": "neutral",
+        "correct": true
+      },
+      {
+        "text": "Where is the option to change my account email?",
+        "label": "neutral",
+        "prediction": "neutral",
+        "correct": true
+      },
+      {
+        "text": "How many business days does standard delivery take?",
+        "label": "neutral",
+        "prediction": "neutral",
+        "correct": true
+      }
+    ],
+    "policy": [
+      {
+        "question": "How long does standard delivery take after dispatch?",
+        "policy": "POL-01",
+        "must_contain": [
+          "3",
+          "5"
+        ],
+        "retrieved": [
+          "POL-01",
+          "POL-02"
+        ],
+        "answer": {
+          "answer": "Standard delivery typically takes 3 to 5 business days after dispatch.",
+          "evidence": [
+            {
+              "id": "POL-01",
+              "title": "Delivery and tracking",
+              "category": "Orders",
+              "intents": [
+                "track_order",
+                "delivery_period",
+                "delivery_options"
+              ],
+              "content": "Standard delivery takes 3 to 5 business days after dispatch. Express delivery takes 1 to 2 business days after dispatch. A tracking link appears in My Orders once the parcel is dispatched. If a parcel is overdue, the support agent must verify the order number and tracking status before escalating to the carrier. The application cannot verify a live parcel location or promise a new arrival date.",
+              "score": 0.6267,
+              "policy_version": "2026.11.01"
+            }
+          ],
+          "abstained": false,
+          "flags": [],
+          "answer_mode": "generated",
+          "request_id": "8396a7be9015"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": true,
+        "seconds": 1.827303959056735
+      },
+      {
+        "question": "Where do I find my parcel tracking link?",
+        "policy": "POL-01",
+        "must_contain": [
+          "orders"
+        ],
+        "retrieved": [
+          "POL-01"
+        ],
+        "answer": {
+          "answer": "A tracking link appears in My Orders once the parcel is dispatched.",
+          "evidence": [
+            {
+              "id": "POL-01",
+              "title": "Delivery and tracking",
+              "category": "Orders",
+              "intents": [
+                "track_order",
+                "delivery_period",
+                "delivery_options"
+              ],
+              "content": "Standard delivery takes 3 to 5 business days after dispatch. Express delivery takes 1 to 2 business days after dispatch. A tracking link appears in My Orders once the parcel is dispatched. If a parcel is overdue, the support agent must verify the order number and tracking status before escalating to the carrier. The application cannot verify a live parcel location or promise a new arrival date.",
+              "score": 0.3821,
+              "policy_version": "2026.11.01"
+            }
+          ],
+          "abstained": false,
+          "flags": [],
+          "answer_mode": "generated",
+          "request_id": "ff871a12f571"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": true,
+        "seconds": 0.5097407919820398
+      },
+      {
+        "question": "Can I cancel an order before dispatch?",
+        "policy": "POL-02",
+        "must_contain": [
+          "dispatch"
+        ],
+        "retrieved": [
+          "POL-02",
+          "POL-11"
+        ],
+        "answer": {
+          "answer": "Yes, you can cancel an order before dispatch through My Orders.",
+          "evidence": [
+            {
+              "id": "POL-02",
+              "title": "Cancel an order",
+              "category": "Orders",
+              "intents": [
+                "cancel_order"
+              ],
+              "content": "An order can be cancelled before dispatch through My Orders. Dispatched orders cannot be cancelled; the customer can request a return after delivery. A support agent must confirm the dispatch state before confirming cancellation. Cancellation eligibility does not mean a cancellation has been executed.",
+              "score": 0.7253,
+              "policy_version": "2026.11.01"
+            }
+          ],
+          "abstained": false,
+          "flags": [],
+          "answer_mode": "generated",
+          "request_id": "49cd599b3b37"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": true,
+        "seconds": 0.5167610829230398
+      },
+      {
+        "question": "Can a dispatched order still be cancelled?",
+        "policy": "POL-02",
+        "must_contain": [
+          "return"
+        ],
+        "retrieved": [
+          "POL-02",
+          "POL-11"
+        ],
+        "answer": {
+          "answer": "Dispatched orders cannot be cancelled directly. Customers should request a return after delivery if they need to cancel their order.",
+          "evidence": [
+            {
+              "id": "POL-02",
+              "title": "Cancel an order",
+              "category": "Orders",
+              "intents": [
+                "cancel_order"
+              ],
+              "content": "An order can be cancelled before dispatch through My Orders. Dispatched orders cannot be cancelled; the customer can request a return after delivery. A support agent must confirm the dispatch state before confirming cancellation. Cancellation eligibility does not mean a cancellation has been executed.",
+              "score": 0.7068,
+              "policy_version": "2026.11.01"
+            }
+          ],
+          "abstained": false,
+          "flags": [],
+          "answer_mode": "generated",
+          "request_id": "599eed6eb1ea"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": true,
+        "seconds": 2.3354521670844406
+      },
+      {
+        "question": "Can I change the shipping address before dispatch?",
+        "policy": "POL-03",
+        "must_contain": [
+          "dispatch"
+        ],
+        "retrieved": [
+          "POL-03",
+          "POL-02"
+        ],
+        "answer": {
+          "answer": "Yes, you can change the shipping address before dispatch. Save your preferred shipping address in Account Settings.",
+          "evidence": [
+            {
+              "id": "POL-03",
+              "title": "Change an order or address",
+              "category": "Orders",
+              "intents": [
+                "change_order",
+                "change_shipping_address",
+                "set_up_shipping_address"
+              ],
+              "content": "Order contents and delivery addresses can be changed before dispatch, subject to stock and address serviceability. After dispatch, changes are not guaranteed and require carrier review. Customers can save a shipping address in Account Settings. Never confirm an address or order change without checking the order record.",
+              "score": 0.7217,
+              "policy_version": "2026.11.01"
+            }
+          ],
+          "abstained": false,
+          "flags": [],
+          "answer_mode": "generated",
+          "request_id": "0fb36ffee26b"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": true,
+        "seconds": 0.8343400422018021
+      },
+      {
+        "question": "What is the time limit for requesting a return?",
+        "policy": "POL-04",
+        "must_contain": [
+          "14"
+        ],
+        "retrieved": [
+          "POL-04",
+          "POL-08"
+        ],
+        "answer": {
+          "answer": "The time limit for requesting a return is 14 calendar days from delivery.",
+          "evidence": [
+            {
+              "id": "POL-04",
+              "title": "Returns and refunds",
+              "category": "Returns",
+              "intents": [
+                "get_refund",
+                "check_refund_policy",
+                "track_refund"
+              ],
+              "content": "A return request must be raised within 14 calendar days of delivery. Items must be unused and include the original packaging. Damaged or incorrect items require photographs for review. Once the returned item is received and inspected, an eligible refund is issued to the original payment method within 5 to 7 business days. Customers can view an existing refund in My Orders. A support agent must verify the actual return and refund records before confirming approval, issue, receipt or payment status.",
+              "score": 0.5506,
+              "policy_version": "2026.11.01"
+            }
+          ],
+          "abstained": false,
+          "flags": [],
+          "answer_mode": "generated",
+          "request_id": "e40132952509"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": true,
+        "seconds": 1.8162089169491082
+      },
+      {
+        "question": "How long does an eligible refund take after inspection?",
+        "policy": "POL-04",
+        "must_contain": [
+          "5",
+          "7"
+        ],
+        "retrieved": [
+          "POL-04"
+        ],
+        "answer": {
+          "answer": "An eligible refund takes approximately 5 to 7 business days from when the returned item is received and inspected.",
+          "evidence": [
+            {
+              "id": "POL-04",
+              "title": "Returns and refunds",
+              "category": "Returns",
+              "intents": [
+                "get_refund",
+                "check_refund_policy",
+                "track_refund"
+              ],
+              "content": "A return request must be raised within 14 calendar days of delivery. Items must be unused and include the original packaging. Damaged or incorrect items require photographs for review. Once the returned item is received and inspected, an eligible refund is issued to the original payment method within 5 to 7 business days. Customers can view an existing refund in My Orders. A support agent must verify the actual return and refund records before confirming approval, issue, receipt or payment status.",
+              "score": 0.5753,
+              "policy_version": "2026.11.01"
+            }
+          ],
+          "abstained": false,
+          "flags": [],
+          "answer_mode": "generated",
+          "request_id": "70b6ed7f759c"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": true,
+        "seconds": 0.6619582909625024
+      },
+      {
+        "question": "Do you accept UPI and debit cards?",
+        "policy": "POL-05",
+        "must_contain": [
+          "upi"
+        ],
+        "retrieved": [
+          "POL-05"
+        ],
+        "answer": {
+          "answer": "Yes, we accept UPI and debit cards.",
+          "evidence": [
+            {
+              "id": "POL-05",
+              "title": "Payments and invoices",
+              "category": "Payments",
+              "intents": [
+                "payment_issue",
+                "check_payment_methods",
+                "get_invoice",
+                "check_invoice"
+              ],
+              "content": "The store accepts credit cards, debit cards and UPI. Never request a full card number, CVV, OTP or UPI PIN. If a payment appears debited but the order is unconfirmed, the customer should provide the order reference and transaction reference to support through the secure account form. Invoices for confirmed orders can be downloaded from My Orders. A missing or incorrect invoice requires order verification; do not invent an invoice or confirm payment reversal.",
+              "score": 0.5251,
+              "policy_version": "2026.11.01"
+            }
+          ],
+          "abstained": false,
+          "flags": [],
+          "answer_mode": "generated",
+          "request_id": "aa2496805709"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": true,
+        "seconds": 1.8701131669804454
+      },
+      {
+        "question": "Where can I download the invoice for my confirmed order?",
+        "policy": "POL-05",
+        "must_contain": [
+          "orders"
+        ],
+        "retrieved": [
+          "POL-05",
+          "POL-13"
+        ],
+        "answer": {
+          "answer": "Invoices for confirmed orders can be downloaded from My Orders.",
+          "evidence": [
+            {
+              "id": "POL-05",
+              "title": "Payments and invoices",
+              "category": "Payments",
+              "intents": [
+                "payment_issue",
+                "check_payment_methods",
+                "get_invoice",
+                "check_invoice"
+              ],
+              "content": "The store accepts credit cards, debit cards and UPI. Never request a full card number, CVV, OTP or UPI PIN. If a payment appears debited but the order is unconfirmed, the customer should provide the order reference and transaction reference to support through the secure account form. Invoices for confirmed orders can be downloaded from My Orders. A missing or incorrect invoice requires order verification; do not invent an invoice or confirm payment reversal.",
+              "score": 0.5009,
+              "policy_version": "2026.11.01"
+            }
+          ],
+          "abstained": false,
+          "flags": [],
+          "answer_mode": "generated",
+          "request_id": "34b58434ac65"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": true,
+        "seconds": 2.174740750109777
+      },
+      {
+        "question": "What should I check when my account registration email fails?",
+        "policy": "POL-06",
+        "must_contain": [
+          "email"
+        ],
+        "retrieved": [
+          "POL-06",
+          "POL-07"
+        ],
+        "answer": {
+          "answer": "Check if the email you used for registration is already registered and verify the email by checking spam folders.",
+          "evidence": [
+            {
+              "id": "POL-06",
+              "title": "Create or edit an account",
+              "category": "Account",
+              "intents": [
+                "create_account",
+                "edit_account",
+                "registration_problems"
+              ],
+              "content": "Customers can create an account with an email address and complete email verification. Profile details can be edited in Account Settings. For registration issues, check whether the email is already registered and whether the verification email is in spam. Support must not ask for the account password or verification code.",
+              "score": 0.542,
+              "policy_version": "2026.11.01"
+            }
+          ],
+          "abstained": false,
+          "flags": [],
+          "answer_mode": "generated",
+          "request_id": "851c734a15a3"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": true,
+        "seconds": 0.635886250063777
+      },
+      {
+        "question": "How can I reset a forgotten password?",
+        "policy": "POL-07",
+        "must_contain": [
+          "password"
+        ],
+        "retrieved": [
+          "POL-07"
+        ],
+        "answer": {
+          "answer": "To reset a forgotten password, go to the sign-in page, click 'Forgot Password', and follow the reset link sent to your registered email. Ensure you're signed out of other accounts before proceeding.",
+          "evidence": [
+            {
+              "id": "POL-07",
+              "title": "Account access and closure",
+              "category": "Account",
+              "intents": [
+                "recover_password",
+                "delete_account",
+                "switch_account"
+              ],
+              "content": "To recover access, use Forgot Password on the sign-in page and follow the reset link sent to the registered email. Sign out before switching to another account. Account deletion requests are made through Account Settings and require identity verification in the secure account flow. The support application cannot reset passwords, delete accounts or verify identity itself.",
+              "score": 0.5353,
+              "policy_version": "2026.11.01"
+            }
+          ],
+          "abstained": false,
+          "flags": [],
+          "answer_mode": "generated",
+          "request_id": "280e435fe956"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": true,
+        "seconds": 1.9224873329512775
+      },
+      {
+        "question": "Where can I request deletion of my account?",
+        "policy": "POL-07",
+        "must_contain": [
+          "settings"
+        ],
+        "retrieved": [
+          "POL-07",
+          "POL-06"
+        ],
+        "answer": {
+          "answer": "Go to Account Settings and follow the steps to delete your account.",
+          "evidence": [
+            {
+              "id": "POL-07",
+              "title": "Account access and closure",
+              "category": "Account",
+              "intents": [
+                "recover_password",
+                "delete_account",
+                "switch_account"
+              ],
+              "content": "To recover access, use Forgot Password on the sign-in page and follow the reset link sent to the registered email. Sign out before switching to another account. Account deletion requests are made through Account Settings and require identity verification in the secure account flow. The support application cannot reset passwords, delete accounts or verify identity itself.",
+              "score": 0.4706,
+              "policy_version": "2026.11.01"
+            }
+          ],
+          "abstained": false,
+          "flags": [],
+          "answer_mode": "generated",
+          "request_id": "82d2b8d25c87"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": true,
+        "seconds": 0.5153130409307778
+      },
+      {
+        "question": "What are the customer service opening hours?",
+        "policy": "POL-08",
+        "must_contain": [
+          "09",
+          "18"
+        ],
+        "retrieved": [
+          "POL-08"
+        ],
+        "answer": {
+          "answer": "Customer service is available Monday to Saturday from 09:00 to 18:00 IST.",
+          "evidence": [
+            {
+              "id": "POL-08",
+              "title": "Customer service and escalation",
+              "category": "Support",
+              "intents": [
+                "contact_customer_service",
+                "contact_human_agent"
+              ],
+              "content": "Customer service is available Monday to Saturday from 09:00 to 18:00 IST. Customers can request human review through the Help page. Support agents can record an escalation request in a case, but must not promise a callback time or completed transfer without confirmation from the support team.",
+              "score": 0.4848,
+              "policy_version": "2026.11.01"
+            }
+          ],
+          "abstained": false,
+          "flags": [],
+          "answer_mode": "generated",
+          "request_id": "0ff9bb6a5d8a"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": true,
+        "seconds": 1.9987201250623912
+      },
+      {
+        "question": "How can I raise a complaint about my order?",
+        "policy": "POL-09",
+        "must_contain": [
+          "help"
+        ],
+        "retrieved": [
+          "POL-09",
+          "POL-13"
+        ],
+        "answer": {
+          "answer": "To raise a complaint about your order, visit the Help section of our website. Provide the order reference and a detailed description of the issue you're facing.",
+          "evidence": [
+            {
+              "id": "POL-09",
+              "title": "Feedback and complaints",
+              "category": "Support",
+              "intents": [
+                "review",
+                "complaint"
+              ],
+              "content": "Customers can leave a review on the product page after purchase or raise a complaint through Help. A complaint should include the order reference and a clear description. The team reviews complaints and requests any missing information. Do not claim that compensation or a replacement has been approved without an authorised decision.",
+              "score": 0.5491,
+              "policy_version": "2026.11.01"
+            }
+          ],
+          "abstained": false,
+          "flags": [],
+          "answer_mode": "generated",
+          "request_id": "61b501b3e274"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": true,
+        "seconds": 0.8538183749187738
+      },
+      {
+        "question": "How can I stop the newsletter emails?",
+        "policy": "POL-10",
+        "must_contain": [
+          "unsubscribe"
+        ],
+        "retrieved": [
+          "POL-10"
+        ],
+        "answer": {
+          "answer": "To stop receiving newsletter emails, go to Account Settings or use the unsubscribe link found in the email.",
+          "evidence": [
+            {
+              "id": "POL-10",
+              "title": "Newsletter preferences",
+              "category": "Account",
+              "intents": [
+                "newsletter_subscription"
+              ],
+              "content": "Newsletter preferences can be changed in Account Settings or through the unsubscribe link in the email. Transactional order and security messages continue even when marketing newsletters are disabled.",
+              "score": 0.5982,
+              "policy_version": "2026.11.01"
+            }
+          ],
+          "abstained": false,
+          "flags": [],
+          "answer_mode": "generated",
+          "request_id": "bf07e68045cf"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": true,
+        "seconds": 2.0183163748588413
+      },
+      {
+        "question": "Is there a cancellation fee before dispatch?",
+        "policy": "POL-11",
+        "must_contain": [
+          "no"
+        ],
+        "retrieved": [
+          "POL-11",
+          "POL-02"
+        ],
+        "answer": {
+          "answer": "No, there is no store cancellation fee for an eligible order cancelled before dispatch.",
+          "evidence": [
+            {
+              "id": "POL-11",
+              "title": "Fees and delivery charges",
+              "category": "Payments",
+              "intents": [
+                "check_cancellation_fee"
+              ],
+              "content": "There is no store cancellation fee for an eligible order cancelled before dispatch. Delivery charges and any return collection charge are displayed at checkout or in the specific return request. Support must check the applicable order details before quoting an amount.",
+              "score": 0.6158,
+              "policy_version": "2026.11.01"
+            }
+          ],
+          "abstained": false,
+          "flags": [],
+          "answer_mode": "generated",
+          "request_id": "75b7e45c1940"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": true,
+        "seconds": 0.5243580411188304
+      },
+      {
+        "question": "How do I place an order through checkout?",
+        "policy": "POL-13",
+        "must_contain": [
+          "checkout"
+        ],
+        "retrieved": [
+          "POL-13",
+          "POL-05"
+        ],
+        "answer": {
+          "answer": "To place an order through checkout, choose an available product, select quantity and options, add it to the basket, review the delivery address, charges, and payment method, then confirm.",
+          "evidence": [
+            {
+              "id": "POL-13",
+              "title": "Place an order",
+              "category": "Orders",
+              "intents": [
+                "place_order"
+              ],
+              "content": "To place an order, choose an available product, select quantity and options, add it to the basket and complete checkout. Review the delivery address, charges and payment method before confirming. Product availability and final prices must be checked in the store checkout; this support application cannot place an order or reserve stock.",
+              "score": 0.6885,
+              "policy_version": "2026.11.01"
+            }
+          ],
+          "abstained": false,
+          "flags": [],
+          "answer_mode": "generated",
+          "request_id": "447c70fcc526"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": true,
+        "seconds": 0.8617091670166701
+      },
+      {
+        "question": "What is the warranty period?",
+        "policy": null,
+        "retrieved": [],
+        "answer": {
+          "answer": "The published store policies do not contain enough information to answer this question. Please request human review.",
+          "evidence": [],
+          "abstained": true,
+          "flags": [],
+          "request_id": "8ab9793a7a82"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": null,
+        "seconds": 0.0013374579139053822
+      },
+      {
+        "question": "Do you ship internationally?",
+        "policy": null,
+        "retrieved": [],
+        "answer": {
+          "answer": "The published store policies do not contain enough information to answer this question. Please request human review.",
+          "evidence": [],
+          "abstained": true,
+          "flags": [],
+          "request_id": "6c02545c866d"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": null,
+        "seconds": 0.7741105421446264
+      },
+      {
+        "question": "Can you promise compensation of 500 rupees?",
+        "policy": null,
+        "retrieved": [],
+        "answer": {
+          "answer": "The published store policies do not contain enough information to answer this question. Please request human review.",
+          "evidence": [],
+          "abstained": true,
+          "flags": [],
+          "request_id": "6fa9f01627b9"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": null,
+        "seconds": 0.0014180419966578484
+      },
+      {
+        "question": "Do you match a competitor's price?",
+        "policy": null,
+        "retrieved": [],
+        "answer": {
+          "answer": "The published store policies do not contain enough information to answer this question. Please request human review.",
+          "evidence": [],
+          "abstained": true,
+          "flags": [],
+          "request_id": "2f2972115772"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": null,
+        "seconds": 0.006026000017300248
+      },
+      {
+        "question": "How do I buy a gift card?",
+        "policy": null,
+        "retrieved": [],
+        "answer": {
+          "answer": "The published store policies do not contain enough information to answer this question. Please request human review.",
+          "evidence": [],
+          "abstained": true,
+          "flags": [],
+          "request_id": "1185f2dd6ab7"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": null,
+        "seconds": 0.0012811250053346157
+      },
+      {
+        "question": "What is the weather tomorrow?",
+        "policy": null,
+        "retrieved": [],
+        "answer": {
+          "answer": "The published store policies do not contain enough information to answer this question. Please request human review.",
+          "evidence": [],
+          "abstained": true,
+          "flags": [],
+          "request_id": "e0182a89af78"
+        },
+        "retrieval_correct": true,
+        "abstention_correct": true,
+        "reference_terms_present": null,
+        "seconds": 0.0011290840338915586
+      }
+    ],
+    "speech": [
+      {
+        "id": "delivery",
+        "text": "My parcel has not arrived. Where can I track my order?",
+        "transcript": "My parcel has not arrived, where can I track my order?",
+        "wer": 0.0,
+        "reference_normalised": "my parcel has not arrived where can i track my order",
+        "hypothesis_normalised": "my parcel has not arrived where can i track my order",
+        "seconds": 0.1908122501336038,
+        "duration_seconds": 3.79,
+        "sha256": "849b8ff39404c68651e2895b226279ec4101f11073c60b784c987e08964b5c86"
+      },
+      {
+        "id": "cancel",
+        "text": "I would like to cancel my order before it is dispatched.",
+        "transcript": "I would like to cancel my order before it is dispatched.",
+        "wer": 0.0,
+        "reference_normalised": "i would like to cancel my order before it is dispatched",
+        "hypothesis_normalised": "i would like to cancel my order before it is dispatched",
+        "seconds": 0.09911658382043242,
+        "duration_seconds": 3.4,
+        "sha256": "22b6068df841b15cbd4693ce9c1043184c9e0cff2ab42e7296b2741578d847d8"
+      },
+      {
+        "id": "refund",
+        "text": "The item arrived damaged. How can I request a refund?",
+        "transcript": "The item arrived damaged, how can I request a refund?",
+        "wer": 0.0,
+        "reference_normalised": "the item arrived damaged how can i request a refund",
+        "hypothesis_normalised": "the item arrived damaged how can i request a refund",
+        "seconds": 0.08667058404535055,
+        "duration_seconds": 3.92,
+        "sha256": "92fb9439d1436ba3af7deaebc8538036db5898d6b107769f61da8a1ca879cd4a"
+      },
+      {
+        "id": "invoice",
+        "text": "Please tell me where I can download my invoice.",
+        "transcript": "Please, tell me where I can download my invoice.",
+        "wer": 0.0,
+        "reference_normalised": "please tell me where i can download my invoice",
+        "hypothesis_normalised": "please tell me where i can download my invoice",
+        "seconds": 0.09122600010596216,
+        "duration_seconds": 3.15,
+        "sha256": "8239ccc515d70f4d7f82944c38ff0f849dfeb361ce832e5960dfd2df041c41b8"
+      }
+    ]
+  },
+  "total_seconds": 28.16010454087518,
+  "limitations": [
+    "Authored examples are small and do not establish real-traffic generalisation.",
+    "Audio fixtures use Apple speech synthesis, not human customer recordings; WER does not measure accent or noise robustness.",
+    "Policy reference-term checks can miss semantic mistakes and penalise correct paraphrases.",
+    "Policy p95 combines retrieval in the diagnostic process with the API call and is not concurrent throughput.",
+    "Abstention includes explicit topic rules as well as retrieval thresholds."
+  ]
+}

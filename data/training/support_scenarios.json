@@ -1,0 +1,370 @@
+{
+  "scope": "Project-authored support scenarios to cover dispatch timing, related intents and payment wording. These are training examples, not customer records or independent evaluation.",
+  "repeat_in_training": 4,
+  "rows": [
+    {
+      "text": "Please cancel the order before it is dispatched.",
+      "label": "cancel_order"
+    },
+    {
+      "text": "Stop my purchase before the warehouse sends the parcel.",
+      "label": "cancel_order"
+    },
+    {
+      "text": "I changed my mind and no longer want the order. Cancel it.",
+      "label": "cancel_order"
+    },
+    {
+      "text": "My order has not shipped yet. I want to cancel it now.",
+      "label": "cancel_order"
+    },
+    {
+      "text": "Do not send my order. I want it cancelled.",
+      "label": "cancel_order"
+    },
+    {
+      "text": "Change the blue shirt to a red shirt in my order.",
+      "label": "change_order"
+    },
+    {
+      "text": "I chose the wrong size; change the item before dispatch.",
+      "label": "change_order"
+    },
+    {
+      "text": "Can I add one more product to the order before it ships?",
+      "label": "change_order"
+    },
+    {
+      "text": "Correct the flat number on the delivery address for my current order.",
+      "label": "change_shipping_address"
+    },
+    {
+      "text": "My order has the wrong delivery address. Can it be changed before dispatch?",
+      "label": "change_shipping_address"
+    },
+    {
+      "text": "Please send this order to my office rather than my home address.",
+      "label": "change_shipping_address"
+    },
+    {
+      "text": "Is there a charge for cancelling before dispatch?",
+      "label": "check_cancellation_fee"
+    },
+    {
+      "text": "Will you deduct any money if I cancel the purchase?",
+      "label": "check_cancellation_fee"
+    },
+    {
+      "text": "How much is the fee to cancel an order that has not shipped?",
+      "label": "check_cancellation_fee"
+    },
+    {
+      "text": "I want to know whether cancellation has a penalty.",
+      "label": "check_cancellation_fee"
+    },
+    {
+      "text": "If I stop my order before the warehouse sends it, will there be a fee?",
+      "label": "check_cancellation_fee"
+    },
+    {
+      "text": "Please check why the amount printed on my invoice is incorrect.",
+      "label": "check_invoice"
+    },
+    {
+      "text": "The invoice has the wrong company details. Can someone verify it?",
+      "label": "check_invoice"
+    },
+    {
+      "text": "I need to check whether the invoice for my order is correct.",
+      "label": "check_invoice"
+    },
+    {
+      "text": "Can I pay with a debit card or UPI?",
+      "label": "check_payment_methods"
+    },
+    {
+      "text": "Which payment options are accepted at checkout?",
+      "label": "check_payment_methods"
+    },
+    {
+      "text": "Does the store support credit card payments?",
+      "label": "check_payment_methods"
+    },
+    {
+      "text": "What are the eligibility conditions for getting a refund?",
+      "label": "check_refund_policy"
+    },
+    {
+      "text": "What rules apply if I return an unwanted product?",
+      "label": "check_refund_policy"
+    },
+    {
+      "text": "How many days do I have to request a return and refund?",
+      "label": "check_refund_policy"
+    },
+    {
+      "text": "Please explain the refund policy before I buy.",
+      "label": "check_refund_policy"
+    },
+    {
+      "text": "Under what conditions can I get my money back?",
+      "label": "check_refund_policy"
+    },
+    {
+      "text": "I want to raise a formal complaint about poor service.",
+      "label": "complaint"
+    },
+    {
+      "text": "How can I register a complaint about the delivery team?",
+      "label": "complaint"
+    },
+    {
+      "text": "I want to complain about repeated failures with my purchase.",
+      "label": "complaint"
+    },
+    {
+      "text": "Where can I find the customer service contact page?",
+      "label": "contact_customer_service"
+    },
+    {
+      "text": "What is the contact number for customer support?",
+      "label": "contact_customer_service"
+    },
+    {
+      "text": "How do I get in touch with your customer service department?",
+      "label": "contact_customer_service"
+    },
+    {
+      "text": "I need to speak with a human agent about this issue.",
+      "label": "contact_human_agent"
+    },
+    {
+      "text": "Please let an actual person review my case.",
+      "label": "contact_human_agent"
+    },
+    {
+      "text": "Connect me with a member of your support team.",
+      "label": "contact_human_agent"
+    },
+    {
+      "text": "I do not want an automated answer; I want a person.",
+      "label": "contact_human_agent"
+    },
+    {
+      "text": "Can a human representative take over this conversation?",
+      "label": "contact_human_agent"
+    },
+    {
+      "text": "How do I create a new customer account?",
+      "label": "create_account"
+    },
+    {
+      "text": "I am a new shopper and want to sign up.",
+      "label": "create_account"
+    },
+    {
+      "text": "Where is the registration page for a new account?",
+      "label": "create_account"
+    },
+    {
+      "text": "I want my customer account permanently deleted.",
+      "label": "delete_account"
+    },
+    {
+      "text": "Please tell me how to close my store profile.",
+      "label": "delete_account"
+    },
+    {
+      "text": "I no longer use the store and want to remove my account.",
+      "label": "delete_account"
+    },
+    {
+      "text": "Is express shipping available in addition to standard shipping?",
+      "label": "delivery_options"
+    },
+    {
+      "text": "What delivery methods can I choose at checkout?",
+      "label": "delivery_options"
+    },
+    {
+      "text": "Do you have faster parcel delivery options?",
+      "label": "delivery_options"
+    },
+    {
+      "text": "How many working days does standard shipping take?",
+      "label": "delivery_period"
+    },
+    {
+      "text": "What is the usual delivery time after dispatch?",
+      "label": "delivery_period"
+    },
+    {
+      "text": "How soon should an express parcel arrive?",
+      "label": "delivery_period"
+    },
+    {
+      "text": "Where can I change the surname on my profile?",
+      "label": "edit_account"
+    },
+    {
+      "text": "I want to update my account email address.",
+      "label": "edit_account"
+    },
+    {
+      "text": "How do I edit my personal account details?",
+      "label": "edit_account"
+    },
+    {
+      "text": "Where can I download the invoice for my order?",
+      "label": "get_invoice"
+    },
+    {
+      "text": "Please tell me how to get a copy of my purchase invoice.",
+      "label": "get_invoice"
+    },
+    {
+      "text": "I need the invoice to submit an expense claim.",
+      "label": "get_invoice"
+    },
+    {
+      "text": "The product arrived broken and I want a refund.",
+      "label": "get_refund"
+    },
+    {
+      "text": "I would like my money back for this damaged item.",
+      "label": "get_refund"
+    },
+    {
+      "text": "Please explain how to request a refund for my purchase.",
+      "label": "get_refund"
+    },
+    {
+      "text": "How do I unsubscribe from your newsletter?",
+      "label": "newsletter_subscription"
+    },
+    {
+      "text": "I want to stop marketing emails but keep order updates.",
+      "label": "newsletter_subscription"
+    },
+    {
+      "text": "Where can I change my newsletter subscription preferences?",
+      "label": "newsletter_subscription"
+    },
+    {
+      "text": "My bank debited the money but checkout did not confirm an order.",
+      "label": "payment_issue"
+    },
+    {
+      "text": "The payment was deducted twice for a single purchase.",
+      "label": "payment_issue"
+    },
+    {
+      "text": "I cannot complete payment because the checkout keeps failing.",
+      "label": "payment_issue"
+    },
+    {
+      "text": "My card was charged but there is no order in my account.",
+      "label": "payment_issue"
+    },
+    {
+      "text": "The amount left my bank account but the store says payment failed.",
+      "label": "payment_issue"
+    },
+    {
+      "text": "How can I buy a product through your website?",
+      "label": "place_order"
+    },
+    {
+      "text": "Please explain how to place a new order at checkout.",
+      "label": "place_order"
+    },
+    {
+      "text": "Where do I add products to the basket and confirm a purchase?",
+      "label": "place_order"
+    },
+    {
+      "text": "I forgot my password and cannot log in.",
+      "label": "recover_password"
+    },
+    {
+      "text": "How do I reset my account password?",
+      "label": "recover_password"
+    },
+    {
+      "text": "I need to regain access because I cannot remember my password.",
+      "label": "recover_password"
+    },
+    {
+      "text": "The sign-up page will not accept my email address.",
+      "label": "registration_problems"
+    },
+    {
+      "text": "Registration failed even though I filled every field.",
+      "label": "registration_problems"
+    },
+    {
+      "text": "I did not receive the email needed to finish creating my account.",
+      "label": "registration_problems"
+    },
+    {
+      "text": "How can I leave a review for the product I purchased?",
+      "label": "review"
+    },
+    {
+      "text": "I loved this product and want to write a positive review.",
+      "label": "review"
+    },
+    {
+      "text": "Where can I rate my purchase on the product page?",
+      "label": "review"
+    },
+    {
+      "text": "Where do I save an address for future deliveries?",
+      "label": "set_up_shipping_address"
+    },
+    {
+      "text": "How can I add a new shipping address to my account?",
+      "label": "set_up_shipping_address"
+    },
+    {
+      "text": "I want to set up a delivery address before placing an order.",
+      "label": "set_up_shipping_address"
+    },
+    {
+      "text": "How can I sign out and log into my other account?",
+      "label": "switch_account"
+    },
+    {
+      "text": "I am using the wrong profile and want to switch accounts.",
+      "label": "switch_account"
+    },
+    {
+      "text": "Can I change from my personal account to a different account?",
+      "label": "switch_account"
+    },
+    {
+      "text": "Where can I check the current tracking progress of my parcel?",
+      "label": "track_order"
+    },
+    {
+      "text": "My package is on its way and I want to track it.",
+      "label": "track_order"
+    },
+    {
+      "text": "Where do I find the tracking link for this order?",
+      "label": "track_order"
+    },
+    {
+      "text": "Where can I check the status of a refund I already requested?",
+      "label": "track_refund"
+    },
+    {
+      "text": "I returned the item last week. Has my refund been issued yet?",
+      "label": "track_refund"
+    },
+    {
+      "text": "How do I track the progress of my existing refund?",
+      "label": "track_refund"
+    }
+  ]
+}
