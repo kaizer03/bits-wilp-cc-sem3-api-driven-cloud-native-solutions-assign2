@@ -13,7 +13,7 @@ apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 systemctl enable --now docker
 install -d -o ubuntu -g ubuntu /opt/northstar
 if [ ! -f /swapfile ]; then
-  fallocate -l 4G /swapfile
+  fallocate -l 8G /swapfile
   chmod 600 /swapfile
   mkswap /swapfile
   swapon /swapfile
