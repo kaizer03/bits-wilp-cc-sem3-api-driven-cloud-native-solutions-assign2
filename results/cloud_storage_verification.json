@@ -1,0 +1,19 @@
+{
+  "verified": true,
+  "instance_id": "i-0de8acd110341c47e",
+  "region": "ap-south-1",
+  "before_ip": "65.0.135.201",
+  "after_ip": "13.203.205.75",
+  "case_reference": "NS-0003",
+  "case_status": "resolved",
+  "entire_case_unchanged": true,
+  "case_sha256": "68a88cd66e815a92218a4d9fecc04f9982cdc6ef872996f807958db1c0143224",
+  "post_restart_health": {
+    "status": "ok",
+    "version": "1.0.0",
+    "model_device": "cpu",
+    "prompt_version": "support-1.2",
+    "time": "2026-11-04T16:18:37.503840+00:00"
+  },
+  "recorded_at": "2026-11-04T16:18:37.565991+00:00"
+}

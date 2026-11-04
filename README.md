@@ -65,11 +65,11 @@ The container uses the compact Qwen2.5-0.5B generation profile in full precision
 
 The port is bound to loopback by default. Access from another computer requires a separately configured deployment with appropriate authentication and transport protection. The application does not claim multi-user production readiness.
 
-Local Linux ARM64 verification does not establish AMD64 or BITS lab compatibility. The final VM architecture, available memory, storage persistence and permitted network access must be checked before deployment. Use the reviewed source revision and model checksums; avoid modifying a separate cloud copy. SQLite must use a filesystem supporting its locking semantics; a shared network mount is not assumed suitable.
+Local Linux ARM64 execution and the BITS AWS Ubuntu AMD64 deployment have both completed functional verification. The cloud run used t3a.medium with 4 GiB RAM and 8 GiB swap. Nine real API checks passed, and a resolved voice case with its approval history survived an EC2 stop and start. A cold case analysis took 96 seconds in this constrained lab run. Results are recorded in results/cloud_runtime_checks.json and results/cloud_storage_verification.json. Windows execution remains unverified. SQLite requires a filesystem supporting its locking semantics.
 
 ## Cloud runtime
 
-`deploy/bootstrap_ubuntu.sh` prepares an Ubuntu host with Docker and persistent disk swap. `deploy/prepare_models.py` downloads only the CPU inference snapshots pinned in the model manifest. The trained intent checkpoint is transferred separately. `deploy/start.sh` builds and starts the same Compose service used locally. The service remains bound to loopback and can be reached through an authenticated SSH tunnel. Docker starts on boot; its named data volume retains case history.
+`deploy/bootstrap_ubuntu.sh` prepares an Ubuntu host with Docker and persistent disk swap. `deploy/prepare_models.py` downloads only the CPU inference snapshots pinned in the model manifest. The trained intent checkpoint is transferred separately. `deploy/start.sh` builds and starts the same Compose service used locally. The service remains bound to loopback and can be reached through an authenticated SSH tunnel. A local tunnel port is only an entry point: inference and database operations run on EC2. Set APP_ENVIRONMENT=cloud in the host environment file. The CPU preparation command records installed model revisions in the registry, and the startup script makes transferred model files readable by the container user. Docker starts on boot; its named data volume retains case history.
 
 ## Project structure
 
