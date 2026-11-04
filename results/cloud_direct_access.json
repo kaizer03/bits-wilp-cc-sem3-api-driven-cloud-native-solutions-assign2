@@ -1,0 +1,18 @@
+{
+  "verified": true,
+  "url": "http://13.203.205.75:8092",
+  "client_cidr": "49.37.1.181/32",
+  "transport": "HTTP",
+  "scope": "Fictional lab cases, source-IP-restricted direct access; optional SSH tunnel retained.",
+  "health": {
+    "status": "ok",
+    "version": "1.0.0",
+    "model_device": "cpu",
+    "prompt_version": "support-1.2",
+    "time": "2026-11-04T16:28:41.755567+00:00"
+  },
+  "case_reference": "NS-0003",
+  "case_status": "resolved",
+  "case_unchanged": true,
+  "recorded_at": "2026-11-04T16:28:41.867087+00:00"
+}
