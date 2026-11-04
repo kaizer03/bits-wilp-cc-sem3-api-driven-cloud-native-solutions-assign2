@@ -1,4 +1,4 @@
-"""Integration verification against a dedicated local application instance."""
+"""Integration verification against a dedicated application instance."""
 import argparse
 import json
 import time
@@ -8,10 +8,11 @@ import httpx
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--url',default='http://127.0.0.1:8093');p.add_argument('--output',default='.runtime/runtime-checks.json');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--url',default='http://127.0.0.1:8093');p.add_argument('--output',default='.runtime/runtime-checks.json')
+    p.add_argument('--environment',choices=['local','cloud'],default='local');p.add_argument('--timeout',type=float,default=180);a=p.parse_args()
     rows=[];output=Path(a.output);output.parent.mkdir(parents=True,exist_ok=True)
-    def save():output.write_text(json.dumps({'url':a.url,'scope':'Functional checks against a dedicated local instance. No production, cloud or load-test claim.','checks':rows},indent=2))
-    with httpx.Client(base_url=a.url,timeout=180) as c:
+    def save():output.write_text(json.dumps({'url':a.url,'environment':a.environment,'scope':f'Functional checks against a dedicated {a.environment} instance. No production or load-test claim.','checks':rows},indent=2))
+    with httpx.Client(base_url=a.url,timeout=a.timeout) as c:
         def request(method,path,payload=None):
             started=time.perf_counter()
             try:
