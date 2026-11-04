@@ -4,7 +4,7 @@ services:
     build: .
     image: northstar-support:local
     ports:
-      - "127.0.0.1:${APP_PORT:-8092}:8092"
+      - "${APP_BIND_HOST:-127.0.0.1}:${APP_PORT:-8092}:8092"
     environment:
       APP_ENVIRONMENT: ${APP_ENVIRONMENT:-local}
       MODEL_DEVICE: cpu
