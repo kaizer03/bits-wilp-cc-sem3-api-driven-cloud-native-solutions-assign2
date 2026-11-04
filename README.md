@@ -67,6 +67,10 @@ The port is bound to loopback by default. Access from another computer requires 
 
 Local Linux ARM64 verification does not establish AMD64 or BITS lab compatibility. The final VM architecture, available memory, storage persistence and permitted network access must be checked before deployment. Use the reviewed source revision and model checksums; avoid modifying a separate cloud copy. SQLite must use a filesystem supporting its locking semantics; a shared network mount is not assumed suitable.
 
+## Cloud runtime
+
+`deploy/bootstrap_ubuntu.sh` prepares an Ubuntu host with Docker and persistent disk swap. `deploy/prepare_models.py` downloads only the CPU inference snapshots pinned in the model manifest. The trained intent checkpoint is transferred separately. `deploy/start.sh` builds and starts the same Compose service used locally. The service remains bound to loopback and can be reached through an authenticated SSH tunnel. Docker starts on boot; its named data volume retains case history.
+
 ## Project structure
 
 ```text
